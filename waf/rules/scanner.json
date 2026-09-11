@@ -1,0 +1,4 @@
+{"rules":[
+ {"id":"SCANNER-001","name":"Security scanner user agent","category":"SCANNER","severity":"LOW","score":2,"targets":["user_agent"],"patterns":["\\b(?:sqlmap|nikto|acunetix|nmap|masscan)\\b"]},
+ {"id":"SCANNER-002","name":"Automated web probe user agent","category":"SCANNER","severity":"LOW","score":2,"targets":["user_agent"],"patterns":["\\b(?:gobuster|dirbuster|wpscan)\\b"]}
+]}

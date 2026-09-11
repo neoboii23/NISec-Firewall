@@ -1,0 +1,70 @@
+{
+  "rules": [
+    {
+      "id": "WAF-006-UPLOAD-001",
+      "name": "Dangerous or disallowed extension",
+      "category": "MALICIOUS_FILE_UPLOAD",
+      "severity": "HIGH",
+      "score": 8,
+      "enabled": true,
+      "action": "BLOCK",
+      "targets": [],
+      "patterns": []
+    },
+    {
+      "id": "WAF-006-UPLOAD-002",
+      "name": "Dangerous double extension",
+      "category": "MALICIOUS_FILE_UPLOAD",
+      "severity": "HIGH",
+      "score": 8,
+      "enabled": true,
+      "action": "BLOCK",
+      "targets": [],
+      "patterns": []
+    },
+    {
+      "id": "WAF-006-UPLOAD-003",
+      "name": "Declared MIME or signature mismatch",
+      "category": "MALICIOUS_FILE_UPLOAD",
+      "severity": "HIGH",
+      "score": 8,
+      "enabled": true,
+      "action": "BLOCK",
+      "targets": [],
+      "patterns": []
+    },
+    {
+      "id": "WAF-006-UPLOAD-004",
+      "name": "Suspicious filename",
+      "category": "MALICIOUS_FILE_UPLOAD",
+      "severity": "HIGH",
+      "score": 8,
+      "enabled": true,
+      "action": "BLOCK",
+      "targets": [],
+      "patterns": []
+    },
+    {
+      "id": "WAF-006-UPLOAD-005",
+      "name": "File exceeds size policy",
+      "category": "MALICIOUS_FILE_UPLOAD",
+      "severity": "HIGH",
+      "score": 8,
+      "enabled": true,
+      "action": "BLOCK",
+      "targets": [],
+      "patterns": []
+    },
+    {
+      "id": "WAF-006-UPLOAD-006",
+      "name": "Suspicious content signature",
+      "category": "MALICIOUS_FILE_UPLOAD",
+      "severity": "HIGH",
+      "score": 8,
+      "enabled": true,
+      "action": "BLOCK",
+      "targets": [],
+      "patterns": []
+    }
+  ]
+}

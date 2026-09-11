@@ -1,0 +1,72 @@
+{
+  "normalization_passes": 4,
+  "sql_injection": {
+    "enabled": true
+  },
+  "xss": {
+    "enabled": true
+  },
+  "command_injection": {
+    "enabled": true
+  },
+  "directory_traversal": {
+    "enabled": true,
+    "file_endpoints": {
+      "/download": [
+        "file"
+      ]
+    }
+  },
+  "brute_force": {
+    "enabled": true,
+    "login_path": "/login",
+    "identity_fields": [
+      "identity",
+      "username",
+      "email"
+    ],
+    "response_header": "X-Lab-Auth-Result",
+    "failure_value": "failure",
+    "success_value": "success",
+    "max_failures": 5,
+    "window_seconds": 300,
+    "block_seconds": 600,
+    "max_entries": 10000
+  },
+  "file_upload": {
+    "enabled": true,
+    "max_size_bytes": 1048576,
+    "inspection_max_bytes": 65536,
+    "max_filename_length": 180,
+    "allowed_extensions": {
+      "jpg": "image/jpeg",
+      "jpeg": "image/jpeg",
+      "png": "image/png",
+      "gif": "image/gif",
+      "pdf": "application/pdf",
+      "txt": "text/plain"
+    },
+    "dangerous_extensions": [
+      "exe",
+      "dll",
+      "com",
+      "scr",
+      "bat",
+      "cmd",
+      "ps1",
+      "sh",
+      "php",
+      "phtml",
+      "jsp",
+      "asp",
+      "aspx",
+      "py",
+      "js"
+    ],
+    "content_patterns": [
+      "<\\?(?:php|=)",
+      "<\\s*script\\b",
+      "<[^>]+\\bon[a-z]+\\s*="
+    ]
+  }
+}

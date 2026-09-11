@@ -1,0 +1,8 @@
+{% extends 'base.html' %}{% block subtitle %}Live process counters and persisted protection thresholds.{% endblock %}
+{% block content %}<section class="panel"><form id="rate-form" class="filters">
+{% for key,label in [('rate_requests','Requests per window'),('rate_window','Window seconds'),('brute_failures','Failed login threshold'),('brute_window','Login window seconds'),('brute_block','Login block seconds'),('auto_threshold','Repeated attack threshold'),('auto_window','Attack window seconds'),('auto_block','Automatic block seconds'),('auto_min_score','Minimum auto-block score'),('block_score','Blocking score')] %}
+<label>{{ label }}<input name="{{ key }}" type="number" min="1" value="{{ policy[key] }}" required></label>{% endfor %}
+<label>Rate limiting<select name="rate_enabled"><option value="true" {{ 'selected' if policy.rate_enabled }}>Enabled</option><option value="false" {{ 'selected' if not policy.rate_enabled }}>Disabled</option></select></label>
+<label>Repeated-attack blocking<select name="auto_enabled"><option value="false" {{ 'selected' if not policy.auto_enabled }}>Disabled</option><option value="true" {{ 'selected' if policy.auto_enabled }}>Enabled</option></select></label>
+<button class="primary">Save thresholds</button></form><p class="footnote">Automatic blocking requires multiple high-confidence blocked detections of the same category; disabled by default. Login protection remains independently active. Settings apply on the next WAF request.</p></section>
+<section class="panel"><div class="panel-heading"><h2>Live rate-limit state</h2></div><div id="rate-activity" class="table-wrap"></div></section>{% endblock %}

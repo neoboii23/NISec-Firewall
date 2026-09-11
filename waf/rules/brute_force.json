@@ -1,0 +1,15 @@
+{
+  "rules": [
+    {
+      "id": "WAF-005-BRUTE-001",
+      "name": "Repeated backend-confirmed login failures",
+      "category": "BRUTE_FORCE",
+      "severity": "HIGH",
+      "score": 8,
+      "enabled": true,
+      "action": "BLOCK",
+      "targets": [],
+      "patterns": []
+    }
+  ]
+}

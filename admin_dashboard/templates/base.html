@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="csrf-token" content="{{ csrf_token() }}"><title>{{ title|default('Administration') }} · Sentinel WAF</title>
+<link rel="stylesheet" href="{{ url_for('static',filename='css/dashboard.css') }}">
+<link rel="stylesheet" href="{{ url_for('static',filename='css/extensions.css') }}">
+<script defer src="{{ url_for('static',filename='vendor/chart.umd.js') }}"></script>
+<script defer src="{{ url_for('static',filename='js/charts.js') }}"></script>
+<script defer src="{{ url_for('static',filename='js/dashboard.js') }}"></script></head>
+<body data-page="{{ active|default('detail') }}" data-role="{{ role }}">
+<aside class="sidebar"><a class="brand" href="{{ url_for('dashboard') }}"><span class="shield">S</span><span>SENTINEL<small>WEB APPLICATION FIREWALL</small></span></a>
+{% set navigation = [
+('Monitor', [
+('overview','Overview','dashboard','M3 3h7v7H3z M14 3h7v7h-7z M3 14h7v7H3z M14 14h7v7h-7z'),
+('events','Traffic & logs','event_list','M8 6h13 M8 12h13 M8 18h13 M3 6h.01 M3 12h.01 M3 18h.01'),
+('attacks','Attack analytics','attacks','M4 19V5 M4 19h17 M8 15l4-6 4 3 5-8'),
+('map','Attack source map','map_page','M12 22s7-7 7-13a7 7 0 0 0-14 0c0 6 7 13 7 13z M15 9a3 3 0 1 1-6 0 3 3 0 0 1 6 0'),
+('alerts','Alerts','alert_list','M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9 M10 21h4')]),
+('Protect', [
+('rules','Security rules','rule_list','M12 3l8 3v6c0 5-8 9-8 9s-8-4-8-9V6z M8 12l3 3 5-6'),
+('ip','IP management','ip_list','M8 3h8v5H8z M3 16h6v5H3z M15 16h6v5h-6z M12 8v4 M6 16v-4h12v4'),
+('rates','Rate limiting','rate_page','M4 19a9 9 0 1 1 16 0 M12 13l5-6 M10 16a2 2 0 1 0 4 0 2 2 0 0 0-4 0')]),
+('Workspace', [
+('evaluation','Evaluation','evaluation_page','M6 3h12v18H6z M9 7h6 M9 11h6 M9 15h2'),
+('system','System status','system_page','M3 3h18v14H3z M8 21h8 M12 17v4 M6 10h3l2-4 3 8 2-4h2'),
+('settings','Admin settings','settings_page','M4 7h6 M14 7h6 M4 17h10 M18 17h2 M10 4v6 M14 4v6 M10 4h4 M10 10h4 M14 14h4v6h-4z')])
+] %}
+<nav id="workspace-navigation" class="workspace-nav" aria-label="Main navigation">
+{% for group,items in navigation %}<div class="nav-group"><div class="nav-label">{{ group }}</div>
+{% for key,label,path,icon in items %}{% set selected = active==key or (key=='events' and active=='live') %}
+<a class="nav-link{{ ' active' if selected else '' }}" href="{{ url_for(path) }}"{% if selected %} aria-current="page"{% endif %}><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="{{ icon }}"/></svg><span class="nav-text">{{ label }}</span>{% if key=='alerts' %}<b id="alert-count">0</b>{% endif %}</a>
+{% endfor %}</div>{% endfor %}</nav>
+<div class="sidebar-bottom"><span class="status-dot"></span> Local security workspace<p>WAF · 8080 &nbsp; / &nbsp; ADMIN · 9000</p><div class="admin"><span class="avatar">{{ admin[0]|upper if admin else 'A' }}</span><div>{{ admin|default('Administrator',true) }}<small>{{ 'Viewer' if role=='VIEWER' else 'Administrator' }}</small></div><form method="post" action="{{ url_for('logout') }}"><input type="hidden" name="csrf" value="{{ csrf_token() }}"><button class="icon-btn" title="Sign out" aria-label="Sign out">↗</button></form></div></div>
+</aside>
+<div class="workspace"><header class="topbar"><button id="mobile-menu" class="icon-btn" aria-label="Toggle navigation" aria-controls="workspace-navigation" aria-expanded="false">☰</button><div>Workspace <span>/</span> {{ title|default('Security') }}</div><div class="connection"><span id="live-dot" class="status-dot"></span><span id="live-state">Connecting</span><time id="updated-at">—</time></div></header>
+<main><div class="page-heading"><div><div class="eyebrow">SENTINEL / CONTROL CENTER</div><h1>{{ title }}</h1><p>{% block subtitle %}Monitor threats. Understand activity. Take action.{% endblock %}</p></div><span class="range-pill">↻ &nbsp; Updates every 3 seconds</span></div>
+<div id="notice" class="notice" role="status" hidden></div>{% block content %}{% endblock %}</main>
+<footer>Sentinel WAF · Local administration <span>Event times displayed in UTC</span></footer></div></body></html>

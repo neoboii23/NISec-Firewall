@@ -1,0 +1,18 @@
+textarea{display:block;background:#0b121c;color:#dce7f3;border:1px solid #2c3c50;border-radius:5px;width:100%;font:inherit;padding:8px;max-width:100%}.sidebar{overflow-y:auto}nav{gap:2px}nav a{padding-top:8px;padding-bottom:8px}.nav-label{margin-top:25px}.service-health{margin:0 0 20px}#map-detail{margin:15px 23px}#audit-table td{white-space:normal;max-width:320px;overflow-wrap:anywhere}.chart-grid>*{min-width:0}
+#comparison-table td{white-space:normal;min-width:75px;overflow-wrap:anywhere}#comparison-table td:nth-child(2){min-width:180px}#comparison-table td:nth-child(4){min-width:130px}
+
+/* One shared navigation treatment across every Sentinel workspace page. */
+.sidebar{padding:26px 16px 18px;overflow:hidden}
+.sidebar>.brand,.sidebar-bottom{flex-shrink:0}
+.workspace-nav{display:block;flex:1;min-height:0;overflow-y:auto;margin:24px -4px 0;padding:0 4px;scrollbar-width:thin;scrollbar-color:var(--line) transparent}
+.workspace-nav .nav-group+.nav-group{margin-top:20px}
+.workspace-nav .nav-label{margin:0 12px 8px;text-transform:uppercase;font-size:9px;letter-spacing:1.6px;color:#718399}
+.workspace-nav .nav-link{position:relative;min-height:39px;padding:9px 12px;gap:11px;margin:3px 0;border:1px solid transparent;border-radius:7px}
+.workspace-nav .nav-link.active{background:#17322f;border-color:#285046;color:#82f1d4}
+.workspace-nav .nav-link.active:before{display:none}
+.workspace-nav .nav-link:focus-visible{outline:2px solid var(--teal);outline-offset:-2px}
+.workspace-nav .nav-icon{width:18px;height:18px;flex:0 0 18px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.workspace-nav .nav-text{font-size:12px;width:auto;line-height:1.4}
+.sidebar-bottom{margin-top:16px;padding:16px 8px 0;border-top:1px solid var(--line)}
+.sidebar-bottom .admin{margin-top:14px;padding-top:14px}
+@media(max-height:780px){.sidebar{padding-top:18px}.workspace-nav{margin-top:18px}.workspace-nav .nav-group+.nav-group{margin-top:12px}.workspace-nav .nav-link{min-height:35px;padding-top:7px;padding-bottom:7px}.sidebar-bottom>p{display:none}}

@@ -1,0 +1,7 @@
+code,category,without_waf,direct_status,vulnerability_demonstrated,with_waf,protected_status,detected,blocked,blocked_backend_arrivals
+WAF-001,SQL_INJECTION,Unmatched baseline returned 0 catalog rows; boolean injection returned 6,200,True,Prevented before backend,403,True,True,0
+WAF-002,XSS,Stored script markup rendered unescaped; browser execution not tested,302,True,Prevented before backend,403,True,True,0
+WAF-003,COMMAND_INJECTION,Pattern accepted as search text; backend has no command-execution sink,200,,Prevented before backend,403,True,True,0
+WAF-004,DIRECTORY_TRAVERSAL,Synthetic canary outside download directory returned,200,True,Prevented before backend,403,True,True,0
+WAF-005,BRUTE_FORCE,Six failed logins accepted without throttling,200,True,Failure threshold and sixth login response observed,429,True,True,0
+WAF-006,MALICIOUS_FILE_UPLOAD,"Disallowed extension stored; harmless content, never executed",302,True,Prevented before backend,403,True,True,0

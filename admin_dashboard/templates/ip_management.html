@@ -1,0 +1,11 @@
+{% extends 'base.html' %}{% block subtitle %}Persistent source policies. NORMAL trust retains every security check.{% endblock %}
+{% block content %}<section class="panel"><div class="panel-heading"><h2>Add an IP policy</h2></div><form id="ip-form" class="filters">
+<label>IP address<input name="ip" required placeholder="192.0.2.10"></label>
+<label>Policy<select name="kind"><option value="temporary">Temporary block</option><option value="blacklist">Blacklist</option><option value="whitelist">Whitelist</option></select></label>
+<label>Reason<input name="reason" maxlength="250" required></label>
+<label>Expiry seconds (0 = permanent blacklist)<input name="duration" type="number" min="0" max="604800" value="600"></label>
+<label>Whitelist trust mode<select name="trust_mode"><option>NORMAL</option><option>RATE_LIMIT_BYPASS</option><option>BLACKLIST_BYPASS</option><option>FULL_BYPASS</option></select></label>
+<button class="primary">Save policy</button></form><p class="footnote">Trust modes apply only to whitelists. FULL_BYPASS disables inspection and policy blocking and requires confirmation. Hard request limits still apply.</p></section>
+<section class="panel"><div class="panel-heading"><h2>Active IP policies</h2><input id="ip-search" aria-label="Search IP" placeholder="Search IP address"></div>
+<div class="button-row filters" role="group" aria-label="IP policy tabs"><button type="button" class="secondary" data-ip-kind="">All policies</button><button type="button" class="secondary" data-ip-kind="blacklist">Blacklist</button><button type="button" class="secondary" data-ip-kind="whitelist">Whitelist</button><button type="button" class="secondary" data-ip-kind="temporary">Temporary blocks</button></div>
+<div id="ip-table" class="table-wrap"></div></section>{% endblock %}

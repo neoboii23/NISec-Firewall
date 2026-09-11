@@ -1,0 +1,13 @@
+{
+  "name": "nisec-local-database-tools",
+  "private": true,
+  "description": "Local Supabase tooling; Flask services remain separate",
+  "scripts": {
+    "db:start": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/start_supabase.ps1",
+    "db:stop": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/start_supabase.ps1 -Action stop",
+    "db:status": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/start_supabase.ps1 -Action status"
+  },
+  "devDependencies": {
+    "supabase": "2.117.0"
+  }
+}

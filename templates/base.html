@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{% block title %}ORIGINE{% endblock %} · Bag Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"></head><body>
+<div class="announcement">Complimentary shipping on orders over $150 · Designed for every day</div>
+<header class="site-header"><a class="wordmark" href="{{ url_for('home') }}">ORIG<span>I</span>NE</a><nav><a href="{{ url_for('home') }}">Home</a><a href="{{ url_for('search') }}">Search</a><a href="{{ url_for('comment') }}">Journal</a>{% if g.user and g.user.is_admin %}<a href="{{ url_for('admin') }}">Admin</a>{% endif %}</nav><div class="nav-actions">{% if g.user %}<span class="hello">Hi, {{ g.user.username }}</span><a href="{{ url_for('profile') }}" target="_blank" rel="noopener">Profile ↗</a><a class="button small" href="{{ url_for('logout') }}">Logout</a>{% else %}<a href="{{ url_for('login') }}">Login</a><a class="button small" href="{{ url_for('register') }}">Register</a>{% endif %}</div></header>
+{% with messages = get_flashed_messages(with_categories=true) %}{% if messages %}<div class="flashes">{% for category,message in messages %}<div class="flash {{ category }}">{{ message }}</div>{% endfor %}</div>{% endif %}{% endwith %}
+<main class="page-shell">{% block content %}{% endblock %}</main>
+<footer><div><a class="wordmark" href="{{ url_for('home') }}">ORIG<span>I</span>NE</a><p>Original bags for full lives.<br>Run only in an isolated lab.</p></div><div><b>Explore</b><a href="{{ url_for('search') }}">Search bags</a><a href="{{ url_for('comment') }}">Comments</a><a href="{{ url_for('upload') }}">Upload</a></div><div><b>Account</b><a href="{{ url_for('login') }}">Login</a><a href="{{ url_for('register') }}">Register</a><a href="{{ url_for('profile') }}" target="_blank">Profile</a></div></footer>
+<script src="{{ url_for('static', filename='js/main.js') }}"></script></body></html>

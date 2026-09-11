@@ -1,0 +1,2 @@
+# Optional offline GeoIP reader; a licensed .mmdb database must be supplied separately.
+maxminddb>=2.6,<4.0

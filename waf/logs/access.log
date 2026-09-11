@@ -1,0 +1,237 @@
+2026-09-07 22:25:47,850 ip=127.0.0.1 method=GET path=/search status=200 decision=ALLOW
+2026-09-07 22:39:47,698 ip=127.0.0.1 method=GET path=/ status=200 decision=ALLOW
+2026-09-07 22:39:47,767 ip=127.0.0.1 method=GET path=/favicon.ico status=404 decision=ALLOW
+2026-09-07 22:39:52,068 ip=127.0.0.1 method=GET path=/ status=200 decision=ALLOW
+2026-09-07 22:40:48,213 ip=127.0.0.1 method=GET path=/ status=200 decision=ALLOW
+2026-09-07 22:40:57,051 ip=127.0.0.1 method=GET path=/favicon.ico status=404 decision=ALLOW
+2026-09-07 22:48:12,799 ip=127.0.0.1 method=GET path=/ status=200 decision=ALLOW
+2026-09-07 22:48:24,040 ip=127.0.0.1 method=GET path=/ status=200 decision=ALLOW
+2026-09-07 22:49:52,260 ip=127.0.0.1 method=GET path=/ status=200 decision=ALLOW
+2026-09-07 22:51:26,045 ip=127.0.0.1 method=GET path=/static/css/style.css status=200 decision=ALLOW
+2026-09-07 22:58:12,621 ip=127.0.0.1 method=GET path=/ status=200 decision=ALLOW
+2026-09-07 22:58:12,634 ip=127.0.0.1 method=GET path=/static/css/style.css status=200 decision=ALLOW
+2026-09-07 22:58:12,646 ip=127.0.0.1 method=GET path=/static/js/main.js status=200 decision=ALLOW
+2026-09-07 22:58:12,685 ip=127.0.0.1 method=GET path=/favicon.ico status=404 decision=ALLOW
+2026-09-07 22:58:14,528 ip=127.0.0.1 method=GET path=/ status=200 decision=ALLOW
+2026-09-07 22:58:14,541 ip=127.0.0.1 method=GET path=/static/css/style.css status=304 decision=ALLOW
+2026-09-07 22:58:14,549 ip=127.0.0.1 method=GET path=/static/js/main.js status=304 decision=ALLOW
+2026-09-07 22:58:15,057 ip=127.0.0.1 method=GET path=/ status=200 decision=ALLOW
+2026-09-07 22:58:15,069 ip=127.0.0.1 method=GET path=/static/css/style.css status=304 decision=ALLOW
+2026-09-07 22:58:15,081 ip=127.0.0.1 method=GET path=/static/js/main.js status=304 decision=ALLOW
+2026-09-07 22:58:17,961 ip=127.0.0.1 method=GET path=/login status=200 decision=ALLOW
+2026-09-07 22:58:17,975 ip=127.0.0.1 method=GET path=/static/css/style.css status=304 decision=ALLOW
+2026-09-07 22:58:17,985 ip=127.0.0.1 method=GET path=/static/js/main.js status=304 decision=ALLOW
+2026-09-07 23:00:29,442 ip=127.0.0.1 method=GET path=/ status=200 decision=ALLOW
+2026-09-07 23:00:29,460 ip=127.0.0.1 method=GET path=/static/js/main.js status=304 decision=ALLOW
+2026-09-07 23:00:29,467 ip=127.0.0.1 method=GET path=/static/css/style.css status=304 decision=ALLOW
+2026-09-07 23:00:30,861 ip=127.0.0.1 method=GET path=/ status=200 decision=ALLOW
+2026-09-07 23:00:30,872 ip=127.0.0.1 method=GET path=/static/css/style.css status=304 decision=ALLOW
+2026-09-07 23:00:30,889 ip=127.0.0.1 method=GET path=/static/js/main.js status=304 decision=ALLOW
+2026-09-07 23:00:31,268 ip=127.0.0.1 method=GET path=/ status=200 decision=ALLOW
+2026-09-07 23:00:31,278 ip=127.0.0.1 method=GET path=/static/css/style.css status=304 decision=ALLOW
+2026-09-07 23:00:31,281 ip=127.0.0.1 method=GET path=/static/js/main.js status=304 decision=ALLOW
+2026-09-07 23:00:31,436 ip=127.0.0.1 method=GET path=/ status=200 decision=ALLOW
+2026-09-07 23:00:31,450 ip=127.0.0.1 method=GET path=/static/js/main.js status=304 decision=ALLOW
+2026-09-07 23:00:31,458 ip=127.0.0.1 method=GET path=/static/css/style.css status=304 decision=ALLOW
+2026-09-09 19:26:06,627 ip=127.0.0.1 method=GET path=/ status=200 decision=ALLOW
+2026-09-09 19:26:06,756 ip=127.0.0.1 method=GET path=/static/css/style.css status=200 decision=ALLOW
+2026-09-09 19:27:01,909 ip=127.0.0.1 method=GET path=/ status=200 decision=ALLOW
+2026-09-09 19:27:01,957 ip=127.0.0.1 method=GET path=/static/css/style.css status=200 decision=ALLOW
+2026-09-09 19:27:02,030 ip=127.0.0.1 method=GET path=/static/js/main.js status=200 decision=ALLOW
+2026-09-09 19:28:07,717 ip=127.0.0.1 method=GET path=/ status=200 decision=ALLOW
+2026-09-09 19:28:07,761 ip=127.0.0.1 method=GET path=/static/js/main.js status=304 decision=ALLOW
+2026-09-09 19:28:07,771 ip=127.0.0.1 method=GET path=/static/css/style.css status=304 decision=ALLOW
+2026-09-09 19:28:07,945 ip=127.0.0.1 method=GET path=/favicon.ico status=404 decision=ALLOW
+2026-09-09 19:28:11,572 ip=127.0.0.1 method=GET path=/login status=200 decision=ALLOW
+2026-09-09 19:28:11,592 ip=127.0.0.1 method=GET path=/static/css/style.css status=304 decision=ALLOW
+2026-09-09 19:28:11,610 ip=127.0.0.1 method=GET path=/static/js/main.js status=304 decision=ALLOW
+2026-09-09 19:28:18,566 ip=127.0.0.1 method=GET path=/upload status=302 decision=ALLOW
+2026-09-09 19:28:18,587 ip=127.0.0.1 method=GET path=/login status=200 decision=ALLOW
+2026-09-09 19:28:18,612 ip=127.0.0.1 method=GET path=/static/css/style.css status=304 decision=ALLOW
+2026-09-09 19:28:18,624 ip=127.0.0.1 method=GET path=/static/js/main.js status=304 decision=ALLOW
+2026-09-09 19:28:22,295 ip=127.0.0.1 method=GET path=/ status=200 decision=ALLOW
+2026-09-09 19:28:22,315 ip=127.0.0.1 method=GET path=/static/css/style.css status=304 decision=ALLOW
+2026-09-09 19:28:22,344 ip=127.0.0.1 method=GET path=/static/js/main.js status=304 decision=ALLOW
+2026-09-09 19:32:59,130 ip=127.0.0.1 method=GET path=/login status=200 decision=ALLOW
+2026-09-09 19:32:59,149 ip=127.0.0.1 method=GET path=/static/css/style.css status=304 decision=ALLOW
+2026-09-09 19:32:59,169 ip=127.0.0.1 method=GET path=/static/js/main.js status=304 decision=ALLOW
+2026-09-09 19:33:14,707 ip=127.0.0.1 method=GET path=/comment status=302 decision=ALLOW
+2026-09-09 19:33:14,748 ip=127.0.0.1 method=GET path=/login status=200 decision=ALLOW
+2026-09-09 19:33:14,798 ip=127.0.0.1 method=GET path=/static/css/style.css status=304 decision=ALLOW
+2026-09-09 19:33:14,820 ip=127.0.0.1 method=GET path=/static/js/main.js status=304 decision=ALLOW
+2026-09-09 19:33:19,968 ip=127.0.0.1 method=GET path=/upload status=302 decision=ALLOW
+2026-09-09 19:33:20,001 ip=127.0.0.1 method=GET path=/login status=200 decision=ALLOW
+2026-09-09 19:33:20,015 ip=127.0.0.1 method=GET path=/static/css/style.css status=304 decision=ALLOW
+2026-09-09 19:33:20,019 ip=127.0.0.1 method=GET path=/static/js/main.js status=304 decision=ALLOW
+2026-09-09 19:38:00,056 ip=127.0.0.1 method=GET path=/upload status=302 decision=ALLOW
+2026-09-09 19:38:00,074 ip=127.0.0.1 method=GET path=/login status=200 decision=ALLOW
+2026-09-09 19:38:00,122 ip=127.0.0.1 method=GET path=/static/js/main.js status=304 decision=ALLOW
+2026-09-09 19:38:00,130 ip=127.0.0.1 method=GET path=/static/css/style.css status=304 decision=ALLOW
+2026-09-09 19:38:03,293 ip=127.0.0.1 method=GET path=/comment status=302 decision=ALLOW
+2026-09-09 19:38:03,322 ip=127.0.0.1 method=GET path=/login status=200 decision=ALLOW
+2026-09-09 19:38:03,339 ip=127.0.0.1 method=GET path=/static/css/style.css status=304 decision=ALLOW
+2026-09-09 19:38:03,342 ip=127.0.0.1 method=GET path=/static/js/main.js status=304 decision=ALLOW
+{"timestamp": "2026-09-09T13:14:55.038489+00:00", "incident_id": "WAF-155AE649BBAF4E52877565BFF0E424FA", "source_ip": "127.0.0.1", "method": "GET", "path": "/search", "status": 403, "decision": "BLOCK"}
+{"timestamp": "2026-09-09T13:14:55.058168+00:00", "incident_id": "WAF-89E94719C5DB48D5A5AFAD38F8AF7F93", "source_ip": "127.0.0.1", "method": "GET", "path": "/health", "status": 200, "decision": "ALLOW"}
+2026-09-09 19:46:30,428 ip=127.0.0.1 method=GET path=/ status=200 decision=ALLOW
+2026-09-09 19:46:30,476 ip=127.0.0.1 method=GET path=/static/css/style.css status=200 decision=ALLOW
+2026-09-09 19:46:30,529 ip=127.0.0.1 method=GET path=/static/js/main.js status=200 decision=ALLOW
+2026-09-09 19:46:30,697 ip=127.0.0.1 method=GET path=/favicon.ico status=404 decision=ALLOW
+{"timestamp": "2026-09-09T13:17:31.021932+00:00", "incident_id": "WAF-93D7E80631E849A1B1D11C3746FBA685", "source_ip": "127.0.0.1", "method": "GET", "path": "/search", "status": 403, "decision": "BLOCK"}
+{"timestamp": "2026-09-09T13:17:31.027390+00:00", "incident_id": "WAF-3D84350B75664694910A6BB8253AAE15", "source_ip": "127.0.0.1", "method": "GET", "path": "/health", "status": 200, "decision": "ALLOW"}
+{"timestamp": "2026-09-09T13:18:44.683136+00:00", "incident_id": "WAF-746C3B2C40EA475EB47C75811F27F56B", "source_ip": "127.0.0.1", "method": "GET", "path": "/search", "status": 403, "decision": "BLOCK"}
+{"timestamp": "2026-09-09T13:18:44.689309+00:00", "incident_id": "WAF-28C5F5BC063B4BC2A04F08AB6F0BC0E2", "source_ip": "127.0.0.1", "method": "GET", "path": "/health", "status": 200, "decision": "ALLOW"}
+{"timestamp": "2026-09-09T13:21:30.830485+00:00", "incident_id": "WAF-90C116F1E6ED4AE080215F0327988968", "source_ip": "127.0.0.1", "method": "GET", "path": "/search", "status": 403, "decision": "BLOCK"}
+{"timestamp": "2026-09-09T13:21:30.835288+00:00", "incident_id": "WAF-057944BE47314BE5916207BEA83E555A", "source_ip": "127.0.0.1", "method": "GET", "path": "/health", "status": 200, "decision": "ALLOW"}
+2026-09-09 19:53:05,666 ip=127.0.0.1 method=GET path=/ status=200 decision=ALLOW
+2026-09-09 19:53:05,728 ip=127.0.0.1 method=GET path=/static/css/style.css status=200 decision=ALLOW
+{"timestamp": "2026-09-09T13:24:35.644039+00:00", "incident_id": "WAF-D004BA4EB94147FC946C7EDEB6A8698C", "source_ip": "127.0.0.1", "method": "GET", "path": "/search", "status": 403, "decision": "BLOCK"}
+{"timestamp": "2026-09-09T13:24:35.648147+00:00", "incident_id": "WAF-4DBDF9D53DF6416DA8A5C8809FF98A4C", "source_ip": "127.0.0.1", "method": "GET", "path": "/health", "status": 200, "decision": "ALLOW"}
+{"timestamp": "2026-09-09T13:46:50.477082+00:00", "incident_id": "WAF-9279832739EA4134805B8333437E52D0", "source_ip": "127.0.0.1", "method": "GET", "path": "/search", "status": 403, "decision": "BLOCK"}
+{"timestamp": "2026-09-09T13:46:50.480737+00:00", "incident_id": "WAF-4BDD2F155BBF47FBA88E085C303C69B2", "source_ip": "127.0.0.1", "method": "GET", "path": "/health", "status": 200, "decision": "ALLOW"}
+2026-09-09 20:18:00,857 ip=127.0.0.1 method=GET path=/login status=200 decision=ALLOW
+2026-09-09 20:18:00,878 ip=127.0.0.1 method=GET path=/static/js/main.js status=304 decision=ALLOW
+2026-09-09 20:18:00,886 ip=127.0.0.1 method=GET path=/static/css/style.css status=304 decision=ALLOW
+{"timestamp": "2026-09-09T21:00:58.831993+00:00", "incident_id": "WAF-DCEB822B6DDF4379A2FF045612CD68AD", "source_ip": "127.0.0.1", "method": "GET", "path": "/search", "status": 403, "decision": "BLOCK"}
+{"timestamp": "2026-09-09T21:00:58.838258+00:00", "incident_id": "WAF-D13E1BD60B95425DAC9596F3CEACCCD0", "source_ip": "127.0.0.1", "method": "GET", "path": "/health", "status": 200, "decision": "ALLOW"}
+{"timestamp": "2026-09-09T21:04:39.338079+00:00", "incident_id": "WAF-FBDE1F6218064FD6BC7AE9E7F822113F", "source_ip": "127.0.0.1", "method": "GET", "path": "/search", "status": 200, "decision": "ALLOW"}
+{"timestamp": "2026-09-09T21:04:39.498784+00:00", "incident_id": "WAF-7B41C078266F4552A6C30572E62DFAAE", "source_ip": "127.0.0.1", "method": "GET", "path": "/static/css/style.css", "status": 304, "decision": "ALLOW"}
+{"timestamp": "2026-09-09T21:04:39.515338+00:00", "incident_id": "WAF-55EA48704FF44D0A937CB4CC54B6F486", "source_ip": "127.0.0.1", "method": "GET", "path": "/static/js/main.js", "status": 304, "decision": "ALLOW"}
+{"timestamp": "2026-09-09T21:04:39.612094+00:00", "incident_id": "WAF-E26ED5877F7D49B297E3ABB8EB819921", "source_ip": "127.0.0.1", "method": "GET", "path": "/favicon.ico", "status": 404, "decision": "ALLOW"}
+{"timestamp": "2026-09-09T21:21:52.417046+00:00", "incident_id": "WAF-F4D86644C5DA48EEA20BEBE68B4AA4DA", "source_ip": "127.0.0.1", "method": "GET", "path": "/", "status": 200, "decision": "ALLOW"}
+{"timestamp": "2026-09-09T21:21:52.451643+00:00", "incident_id": "WAF-80494C6C6D6D462B9C405D8B80426B91", "source_ip": "127.0.0.1", "method": "GET", "path": "/static/css/style.css", "status": 304, "decision": "ALLOW"}
+{"timestamp": "2026-09-09T21:21:52.507899+00:00", "incident_id": "WAF-412C01154AF9479688B3DE09C9A6335D", "source_ip": "127.0.0.1", "method": "GET", "path": "/static/js/main.js", "status": 304, "decision": "ALLOW"}
+{"timestamp": "2026-09-09T21:21:52.689615+00:00", "incident_id": "WAF-CFEB823DD56D44F49A5E17CE77F453BA", "source_ip": "127.0.0.1", "method": "GET", "path": "/favicon.ico", "status": 404, "decision": "ALLOW"}
+{"timestamp": "2026-09-09T21:22:02.902354+00:00", "incident_id": "WAF-09B3F835D0AB4FDBB9CB94B9257EA3CC", "source_ip": "127.0.0.1", "method": "GET", "path": "/", "status": 200, "decision": "ALLOW"}
+{"timestamp": "2026-09-09T21:22:02.935325+00:00", "incident_id": "WAF-71AB5F9AE7DA4025AB52DE12000F8A7E", "source_ip": "127.0.0.1", "method": "GET", "path": "/static/css/style.css", "status": 304, "decision": "ALLOW"}
+{"timestamp": "2026-09-09T21:22:02.937621+00:00", "incident_id": "WAF-483886E300BE4BB290AB9BFC704D23A0", "source_ip": "127.0.0.1", "method": "GET", "path": "/static/js/main.js", "status": 304, "decision": "ALLOW"}
+{"timestamp": "2026-09-09T21:22:03.013598+00:00", "incident_id": "WAF-9061B5573EC94927B3D993915EA9F249", "source_ip": "127.0.0.1", "method": "GET", "path": "/favicon.ico", "status": 404, "decision": "ALLOW"}
+{"timestamp": "2026-09-09T21:22:05.514733+00:00", "incident_id": "WAF-E79AF8A4DF5449A18E05DEA7B4CC368E", "source_ip": "127.0.0.1", "method": "GET", "path": "/login", "status": 200, "decision": "ALLOW"}
+{"timestamp": "2026-09-09T21:22:05.535718+00:00", "incident_id": "WAF-04352E22B53C466DBB61FD3494561ED5", "source_ip": "127.0.0.1", "method": "GET", "path": "/static/js/main.js", "status": 304, "decision": "ALLOW"}
+{"timestamp": "2026-09-09T21:22:05.543210+00:00", "incident_id": "WAF-D71DBF5F8B2949F99C003D8DD8EAC2AF", "source_ip": "127.0.0.1", "method": "GET", "path": "/static/css/style.css", "status": 304, "decision": "ALLOW"}
+{"timestamp": "2026-09-09T21:23:16.652406+00:00", "incident_id": "WAF-FBD44998E2794C6FB64917848F821A7E", "source_ip": "127.0.0.1", "method": "POST", "path": "/login", "status": 302, "decision": "ALLOW"}
+{"timestamp": "2026-09-09T21:23:16.680207+00:00", "incident_id": "WAF-3F692799F6EC4575B4B0C50297AE86A0", "source_ip": "127.0.0.1", "method": "GET", "path": "/", "status": 200, "decision": "ALLOW"}
+{"timestamp": "2026-09-09T21:23:16.719969+00:00", "incident_id": "WAF-B8223E9C74374DD7BA6F3D35308220BE", "source_ip": "127.0.0.1", "method": "GET", "path": "/static/js/main.js", "status": 304, "decision": "ALLOW"}
+{"timestamp": "2026-09-09T21:23:16.734761+00:00", "incident_id": "WAF-C74AFE5EB2EE4A83BFEE0916C754EA70", "source_ip": "127.0.0.1", "method": "GET", "path": "/static/css/style.css", "status": 304, "decision": "ALLOW"}
+{"timestamp": "2026-09-09T21:24:31.793105+00:00", "incident_id": "WAF-9AADE2FFA5D74D97B42CF2782C5A1EC1", "source_ip": "127.0.0.1", "method": "GET", "path": "/search", "status": 200, "decision": "ALLOW"}
+{"timestamp": "2026-09-09T21:24:31.822904+00:00", "incident_id": "WAF-369822A16427402B8D993AEA6F8CA144", "source_ip": "127.0.0.1", "method": "GET", "path": "/static/css/style.css", "status": 304, "decision": "ALLOW"}
+{"timestamp": "2026-09-09T21:24:31.837614+00:00", "incident_id": "WAF-F64183ABFD6A4B7E8D5E3BCF87E9844A", "source_ip": "127.0.0.1", "method": "GET", "path": "/static/js/main.js", "status": 304, "decision": "ALLOW"}
+{"timestamp": "2026-09-09T21:24:33.434490+00:00", "incident_id": "WAF-9FD6B9D6E63F4352B6FF6D876DDC06C0", "source_ip": "127.0.0.1", "method": "GET", "path": "/search", "status": 200, "decision": "ALLOW"}
+{"timestamp": "2026-09-09T21:24:33.473141+00:00", "incident_id": "WAF-E66A031F81614B31A2E55ABFC8ACA1C4", "source_ip": "127.0.0.1", "method": "GET", "path": "/static/css/style.css", "status": 304, "decision": "ALLOW"}
+{"timestamp": "2026-09-09T21:24:33.473864+00:00", "incident_id": "WAF-05FEDDF1E3514B53A4B2538A3A787654", "source_ip": "127.0.0.1", "method": "GET", "path": "/static/js/main.js", "status": 304, "decision": "ALLOW"}
+{"timestamp": "2026-09-09T21:25:19.025883+00:00", "incident_id": "WAF-ECDC01F30C544023A134471850028276", "source_ip": "127.0.0.1", "method": "GET", "path": "/comment", "status": 200, "decision": "ALLOW"}
+{"timestamp": "2026-09-09T21:25:19.057131+00:00", "incident_id": "WAF-BBAFAD779BF6439C9E33CCD8C3D2DCD9", "source_ip": "127.0.0.1", "method": "GET", "path": "/static/css/style.css", "status": 304, "decision": "ALLOW"}
+{"timestamp": "2026-09-09T21:25:19.065478+00:00", "incident_id": "WAF-B7E468DD323A42B893FE0A243D70F4B4", "source_ip": "127.0.0.1", "method": "GET", "path": "/static/js/main.js", "status": 304, "decision": "ALLOW"}
+{"timestamp": "2026-09-09T21:25:20.902969+00:00", "incident_id": "WAF-05AB50FE1263424681E4BB6FB3865F9B", "source_ip": "127.0.0.1", "method": "GET", "path": "/search", "status": 200, "decision": "ALLOW"}
+{"timestamp": "2026-09-09T21:25:20.931681+00:00", "incident_id": "WAF-8151B5DCEB9444AEB136F8E4334E7A52", "source_ip": "127.0.0.1", "method": "GET", "path": "/static/js/main.js", "status": 304, "decision": "ALLOW"}
+{"timestamp": "2026-09-09T21:25:20.940474+00:00", "incident_id": "WAF-60F976C4AA2D49A093DF72D3FFC48AEF", "source_ip": "127.0.0.1", "method": "GET", "path": "/static/css/style.css", "status": 304, "decision": "ALLOW"}
+{"timestamp": "2026-09-09T21:25:23.902229+00:00", "incident_id": "WAF-093E7FFF7CE2497FACE3B5E302766766", "source_ip": "127.0.0.1", "method": "GET", "path": "/search", "status": 200, "decision": "ALLOW"}
+{"timestamp": "2026-09-09T21:25:23.920018+00:00", "incident_id": "WAF-41AA01C7DB8E4F5F9549122316AAD703", "source_ip": "127.0.0.1", "method": "GET", "path": "/static/css/style.css", "status": 304, "decision": "ALLOW"}
+{"timestamp": "2026-09-09T21:25:23.948661+00:00", "incident_id": "WAF-6DFFDF33F7A74E618A656566D24B0DEE", "source_ip": "127.0.0.1", "method": "GET", "path": "/static/js/main.js", "status": 304, "decision": "ALLOW"}
+{"timestamp": "2026-09-09T21:25:26.174169+00:00", "incident_id": "WAF-33A4626DC10C45C0ACD50A887FDDE46D", "source_ip": "127.0.0.1", "method": "GET", "path": "/search", "status": 200, "decision": "ALLOW"}
+{"timestamp": "2026-09-09T21:25:26.194399+00:00", "incident_id": "WAF-9EB02730A8D64061959EA0B932ED1796", "source_ip": "127.0.0.1", "method": "GET", "path": "/static/js/main.js", "status": 304, "decision": "ALLOW"}
+{"timestamp": "2026-09-09T21:25:26.197419+00:00", "incident_id": "WAF-2851445A80FE4A48ABF68DD7B0712DF4", "source_ip": "127.0.0.1", "method": "GET", "path": "/static/css/style.css", "status": 304, "decision": "ALLOW"}
+{"timestamp": "2026-09-09T21:39:28.655892+00:00", "incident_id": "WAF-5F994BAC2C084E8187F5AC66C8998CE2", "source_ip": "127.0.0.1", "method": "GET", "path": "/search", "status": 403, "decision": "BLOCK"}
+{"timestamp": "2026-09-09T21:39:28.662958+00:00", "incident_id": "WAF-FD758A85CCCA42CDAD6B3DA3FFB2D1B2", "source_ip": "127.0.0.1", "method": "GET", "path": "/health", "status": 200, "decision": "ALLOW"}
+{"timestamp": "2026-09-09T21:43:32.603065+00:00", "incident_id": "WAF-41511CA6D24B46498A8C07F61129D48B", "source_ip": "127.0.0.1", "method": "GET", "path": "/search", "status": 403, "decision": "BLOCK"}
+{"timestamp": "2026-09-09T21:43:32.613963+00:00", "incident_id": "WAF-65C22137CD524AEEB14D54581BCD5BAC", "source_ip": "127.0.0.1", "method": "GET", "path": "/health", "status": 200, "decision": "ALLOW"}
+{"timestamp": "2026-09-09T21:46:04.201489+00:00", "incident_id": "WAF-E1E8183CF9B04068B888D19BC62705F8", "source_ip": "127.0.0.1", "method": "GET", "path": "/search", "status": 403, "decision": "BLOCK"}
+{"timestamp": "2026-09-09T21:46:04.208442+00:00", "incident_id": "WAF-0742B9E37B30474BB90957F905CA2587", "source_ip": "127.0.0.1", "method": "GET", "path": "/health", "status": 200, "decision": "ALLOW"}
+{"timestamp": "2026-09-09T21:48:38.418497+00:00", "incident_id": "WAF-2528A81DE07546A3AD8F4862F20C4C0E", "source_ip": "127.0.0.1", "method": "GET", "path": "/search", "status": 403, "decision": "BLOCK"}
+{"timestamp": "2026-09-09T21:48:38.436233+00:00", "incident_id": "WAF-F1FD59D57829423F9861A03B74D5B40B", "source_ip": "127.0.0.1", "method": "GET", "path": "/health", "status": 200, "decision": "ALLOW"}
+{"timestamp": "2026-09-09T21:58:47.379958+00:00", "incident_id": "WAF-321873F033904CF09C932ED9F3481ADC", "source_ip": "127.0.0.1", "method": "GET", "path": "/search", "status": 403, "decision": "BLOCK"}
+{"timestamp": "2026-09-09T21:58:47.386441+00:00", "incident_id": "WAF-86C94981FF7E432DBF9672131477B9A2", "source_ip": "127.0.0.1", "method": "GET", "path": "/health", "status": 200, "decision": "ALLOW"}
+{"timestamp": "2026-09-10T05:04:22.674501+00:00", "incident_id": "WAF-2F96C649AFE041F690B811F567B3943C", "source_ip": "127.0.0.1", "method": "GET", "path": "/search", "status": 403, "decision": "BLOCK"}
+{"timestamp": "2026-09-10T05:04:22.683946+00:00", "incident_id": "WAF-86ADB1D3BAEC45DD8A458FB27A2204B7", "source_ip": "127.0.0.1", "method": "GET", "path": "/health", "status": 200, "decision": "ALLOW"}
+{"timestamp": "2026-09-10T05:15:17.609487+00:00", "incident_id": "WAF-9E74956940794C7C935B30AAB729446F", "source_ip": "127.0.0.1", "method": "GET", "path": "/search", "status": 403, "decision": "BLOCK"}
+{"timestamp": "2026-09-10T05:15:17.621796+00:00", "incident_id": "WAF-C5759FED4C2342B69EAC5E444CAE03F0", "source_ip": "127.0.0.1", "method": "GET", "path": "/health", "status": 200, "decision": "ALLOW"}
+{"timestamp": "2026-09-10T05:28:29.109875+00:00", "incident_id": "WAF-739F6CF26FA549BAACC82E903ECA1F71", "source_ip": "127.0.0.1", "method": "GET", "path": "/", "status": 200, "decision": "ALLOW"}
+{"timestamp": "2026-09-10T05:28:29.289369+00:00", "incident_id": "WAF-7DD97CC8023A4E76A12D183DFBD89CB8", "source_ip": "127.0.0.1", "method": "GET", "path": "/static/css/style.css", "status": 304, "decision": "ALLOW"}
+{"timestamp": "2026-09-10T05:28:29.379487+00:00", "incident_id": "WAF-A16EA0948C164ADB8FD0E7EDEE33928D", "source_ip": "127.0.0.1", "method": "GET", "path": "/static/js/main.js", "status": 304, "decision": "ALLOW"}
+{"timestamp": "2026-09-10T05:28:29.475942+00:00", "incident_id": "WAF-FEFC9D40DFDA4E55ACE3BA7F79E914E6", "source_ip": "127.0.0.1", "method": "GET", "path": "/favicon.ico", "status": 404, "decision": "ALLOW"}
+{"timestamp": "2026-09-10T05:29:55.741601+00:00", "incident_id": "WAF-D10A06FC88E64609A5FE6248C0563568", "source_ip": "127.0.0.1", "method": "GET", "path": "/", "status": 200, "decision": "ALLOW"}
+{"timestamp": "2026-09-10T05:29:55.822221+00:00", "incident_id": "WAF-D824F7784098409583B1A150D85545A4", "source_ip": "127.0.0.1", "method": "GET", "path": "/static/css/style.css", "status": 304, "decision": "ALLOW"}
+{"timestamp": "2026-09-10T05:29:55.863807+00:00", "incident_id": "WAF-CE88D1EA8245403091AB25435C5E8594", "source_ip": "127.0.0.1", "method": "GET", "path": "/static/js/main.js", "status": 304, "decision": "ALLOW"}
+{"timestamp": "2026-09-10T07:06:36.545686+00:00", "incident_id": "WAF-7131FF8408184616903A05FB18ABE34F", "source_ip": "127.0.0.1", "method": "GET", "path": "/", "status": 403, "decision": "BLOCK"}
+{"timestamp": "2026-09-10T07:06:36.658139+00:00", "incident_id": "WAF-D56A30736E764B4BABB398879B582F21", "source_ip": "127.0.0.1", "method": "GET", "path": "/favicon.ico", "status": 403, "decision": "BLOCK"}
+{"timestamp": "2026-09-10T07:06:54.267311+00:00", "incident_id": "WAF-D9B6BBCD8C65437B9D5CD26EFB2B49F2", "source_ip": "127.0.0.1", "method": "GET", "path": "/", "status": 403, "decision": "BLOCK"}
+{"timestamp": "2026-09-10T07:06:54.335069+00:00", "incident_id": "WAF-D977E08E0FF249309D3D20E209EF1322", "source_ip": "127.0.0.1", "method": "GET", "path": "/favicon.ico", "status": 403, "decision": "BLOCK"}
+{"timestamp": "2026-09-10T07:06:55.393307+00:00", "incident_id": "WAF-17678ABF51D747868DF977B9C67344B6", "source_ip": "127.0.0.1", "method": "GET", "path": "/", "status": 403, "decision": "BLOCK"}
+{"timestamp": "2026-09-10T07:06:55.458838+00:00", "incident_id": "WAF-CD7B19021C4745728E368FE428D776E7", "source_ip": "127.0.0.1", "method": "GET", "path": "/favicon.ico", "status": 403, "decision": "BLOCK"}
+{"timestamp": "2026-09-10T07:06:57.209536+00:00", "incident_id": "WAF-E543A0F5B6A3446CAE87B2DD93C561D0", "source_ip": "127.0.0.1", "method": "GET", "path": "/", "status": 403, "decision": "BLOCK"}
+{"timestamp": "2026-09-10T07:06:57.279370+00:00", "incident_id": "WAF-690FC5E2B0DB494D97656E0A39CDDF30", "source_ip": "127.0.0.1", "method": "GET", "path": "/favicon.ico", "status": 403, "decision": "BLOCK"}
+{"timestamp": "2026-09-10T07:06:57.353539+00:00", "incident_id": "WAF-F7511C32F90F4930975FA3309E2A0193", "source_ip": "127.0.0.1", "method": "GET", "path": "/", "status": 403, "decision": "BLOCK"}
+{"timestamp": "2026-09-10T07:06:57.392441+00:00", "incident_id": "WAF-85469338742543DC9BB65443A52BC641", "source_ip": "127.0.0.1", "method": "GET", "path": "/favicon.ico", "status": 403, "decision": "BLOCK"}
+{"timestamp": "2026-09-10T07:06:57.516347+00:00", "incident_id": "WAF-C8BB57DB5D264B78970FEA8DD7A232ED", "source_ip": "127.0.0.1", "method": "GET", "path": "/", "status": 403, "decision": "BLOCK"}
+{"timestamp": "2026-09-10T07:06:57.588982+00:00", "incident_id": "WAF-A913D7C42D764EA78AF5478533AFBE1B", "source_ip": "127.0.0.1", "method": "GET", "path": "/favicon.ico", "status": 403, "decision": "BLOCK"}
+{"timestamp": "2026-09-10T07:06:57.655519+00:00", "incident_id": "WAF-2457000640C647839BF8D9957AC9A984", "source_ip": "127.0.0.1", "method": "GET", "path": "/", "status": 403, "decision": "BLOCK"}
+{"timestamp": "2026-09-10T07:06:57.704121+00:00", "incident_id": "WAF-BEDDECB8AACB4C739CAD3437199389D7", "source_ip": "127.0.0.1", "method": "GET", "path": "/favicon.ico", "status": 403, "decision": "BLOCK"}
+{"timestamp": "2026-09-10T07:06:57.811897+00:00", "incident_id": "WAF-E3469021FB27410B978FADE73ED7B199", "source_ip": "127.0.0.1", "method": "GET", "path": "/", "status": 403, "decision": "BLOCK"}
+{"timestamp": "2026-09-10T07:06:57.900912+00:00", "incident_id": "WAF-6DF8B507C0234F94A73A259AE33ADE57", "source_ip": "127.0.0.1", "method": "GET", "path": "/favicon.ico", "status": 403, "decision": "BLOCK"}
+{"timestamp": "2026-09-10T07:06:57.986620+00:00", "incident_id": "WAF-03EA2E1A791948218969230F1E7F1B93", "source_ip": "127.0.0.1", "method": "GET", "path": "/", "status": 403, "decision": "BLOCK"}
+{"timestamp": "2026-09-10T07:06:58.024320+00:00", "incident_id": "WAF-6DB7CD0CD7FE46AA825C7DD6F5532FBD", "source_ip": "127.0.0.1", "method": "GET", "path": "/favicon.ico", "status": 403, "decision": "BLOCK"}
+{"timestamp": "2026-09-10T07:07:27.552733+00:00", "incident_id": "WAF-4428DF9BA1254E67835DCCFBA4715C7C", "source_ip": "127.0.0.1", "method": "GET", "path": "/", "status": 200, "decision": "ALLOW"}
+{"timestamp": "2026-09-10T07:07:27.741524+00:00", "incident_id": "WAF-488325262C8A48C3A08DCB1A3A20FFA2", "source_ip": "127.0.0.1", "method": "GET", "path": "/static/css/style.css", "status": 304, "decision": "ALLOW"}
+{"timestamp": "2026-09-10T07:07:27.748192+00:00", "incident_id": "WAF-293973DCB691420C9AEF3AADF616319D", "source_ip": "127.0.0.1", "method": "GET", "path": "/static/js/main.js", "status": 304, "decision": "ALLOW"}
+{"timestamp": "2026-09-10T07:07:27.944689+00:00", "incident_id": "WAF-B87466E8D11744A1904068B979994071", "source_ip": "127.0.0.1", "method": "GET", "path": "/favicon.ico", "status": 404, "decision": "ALLOW"}
+{"timestamp": "2026-09-10T07:24:48.970528+00:00", "incident_id": "WAF-E51090B5FEBE440EA8C920EBF2AB14F6", "source_ip": "127.0.0.1", "method": "GET", "path": "/", "status": 200, "decision": "ALLOW"}
+{"timestamp": "2026-09-10T07:24:48.995104+00:00", "incident_id": "WAF-7081E3E046D84974B274F1FEEE0D4184", "source_ip": "127.0.0.1", "method": "GET", "path": "/static/js/main.js", "status": 304, "decision": "ALLOW"}
+{"timestamp": "2026-09-10T07:24:49.016908+00:00", "incident_id": "WAF-061D26519E074C959E6BED1E23BAE3F8", "source_ip": "127.0.0.1", "method": "GET", "path": "/static/css/style.css", "status": 304, "decision": "ALLOW"}
+{"timestamp": "2026-09-10T07:24:49.101993+00:00", "incident_id": "WAF-5EE7BC0E968D44359D31F219ADA95E7A", "source_ip": "127.0.0.1", "method": "GET", "path": "/favicon.ico", "status": 404, "decision": "ALLOW"}
+{"timestamp": "2026-09-10T07:25:00.876012+00:00", "incident_id": "WAF-F6297E491CEF40A2B0FB2CD4B9FBDB1C", "source_ip": "127.0.0.1", "method": "GET", "path": "/", "status": 200, "decision": "ALLOW"}
+{"timestamp": "2026-09-10T07:25:00.913861+00:00", "incident_id": "WAF-E82E4483DC22463198C56D637E7C1EE1", "source_ip": "127.0.0.1", "method": "GET", "path": "/static/js/main.js", "status": 304, "decision": "ALLOW"}
+{"timestamp": "2026-09-10T07:25:00.922500+00:00", "incident_id": "WAF-C3371D713FD54F59A166E1C0B8C75FCE", "source_ip": "127.0.0.1", "method": "GET", "path": "/static/css/style.css", "status": 304, "decision": "ALLOW"}
+{"timestamp": "2026-09-10T07:25:05.942005+00:00", "incident_id": "WAF-9921233E5DC44B31863B53464FABFD60", "source_ip": "127.0.0.1", "method": "GET", "path": "/comment", "status": 302, "decision": "ALLOW"}
+{"timestamp": "2026-09-10T07:25:05.988488+00:00", "incident_id": "WAF-C4C0BDCFBA5B4CBD81A761856C52FC3F", "source_ip": "127.0.0.1", "method": "GET", "path": "/login", "status": 200, "decision": "ALLOW"}
+{"timestamp": "2026-09-10T07:25:06.022213+00:00", "incident_id": "WAF-725B38260DA645798B8FAE7FF0559292", "source_ip": "127.0.0.1", "method": "GET", "path": "/static/css/style.css", "status": 304, "decision": "ALLOW"}
+{"timestamp": "2026-09-10T07:25:06.032379+00:00", "incident_id": "WAF-DD5114E1DAED4C4BA7614B8279862E2A", "source_ip": "127.0.0.1", "method": "GET", "path": "/static/js/main.js", "status": 304, "decision": "ALLOW"}
+{"timestamp": "2026-09-11T09:41:50.803648+00:00", "incident_id": "WAF-54D668314CB04AD7ADD47058DC0D7BC3", "source_ip": "127.0.0.1", "method": "GET", "path": "/", "status": 200, "decision": "ALLOW"}
+{"timestamp": "2026-09-11T09:41:50.891517+00:00", "incident_id": "WAF-07E223B3E56F43AAA5665E0F9458B3B7", "source_ip": "127.0.0.1", "method": "GET", "path": "/search", "status": 200, "decision": "ALLOW"}
+{"timestamp": "2026-09-11T09:41:51.145043+00:00", "incident_id": "WAF-E01D9246F59E4A1485135E2CC0EE00C2", "source_ip": "127.0.0.1", "method": "GET", "path": "/static/css/style.css", "status": 200, "decision": "ALLOW"}
+{"timestamp": "2026-09-11T09:41:51.219572+00:00", "incident_id": "WAF-0A27946B7EE54AE1A77B54324A9CD547", "source_ip": "127.0.0.1", "method": "POST", "path": "/login", "status": 200, "decision": "ALLOW"}
+{"timestamp": "2026-09-11T09:42:12.811056+00:00", "incident_id": "WAF-A7DB65386F43472B88030127C1F77190", "source_ip": "127.0.0.1", "method": "GET", "path": "/", "status": 200, "decision": "ALLOW"}
+{"timestamp": "2026-09-11T09:42:12.866073+00:00", "incident_id": "WAF-0F12777D84D149D38461D86969BD27ED", "source_ip": "127.0.0.1", "method": "GET", "path": "/search", "status": 200, "decision": "ALLOW"}
+{"timestamp": "2026-09-11T09:42:12.912960+00:00", "incident_id": "WAF-11575C5E7A134F4EBE8B2DB5EC3C1617", "source_ip": "127.0.0.1", "method": "GET", "path": "/static/css/style.css", "status": 200, "decision": "ALLOW"}
+{"timestamp": "2026-09-11T09:42:13.162264+00:00", "incident_id": "WAF-3C8D748EAA7C44238176E2C013FB4BFC", "source_ip": "127.0.0.1", "method": "POST", "path": "/login", "status": 302, "decision": "ALLOW"}
+{"timestamp": "2026-09-11T09:42:13.262032+00:00", "incident_id": "WAF-F52ECDDC2C774E3285B261C347C372B7", "source_ip": "127.0.0.1", "method": "GET", "path": "/profile", "status": 200, "decision": "ALLOW"}
+{"timestamp": "2026-09-11T09:42:13.343884+00:00", "incident_id": "WAF-0B80DA02CBE84113B3D09D9351FBD5DC", "source_ip": "127.0.0.1", "method": "GET", "path": "/comment", "status": 200, "decision": "ALLOW"}
+{"timestamp": "2026-09-11T09:42:13.412101+00:00", "incident_id": "WAF-75B73DF7350341E7A6CBC5ABA7383EDE", "source_ip": "127.0.0.1", "method": "GET", "path": "/upload", "status": 200, "decision": "ALLOW"}
+{"timestamp": "2026-09-11T09:42:13.502705+00:00", "incident_id": "WAF-8CB564DBA4A94D10A69A1B18420E8ED9", "source_ip": "127.0.0.1", "method": "GET", "path": "/download", "status": 200, "decision": "ALLOW"}
+{"timestamp": "2026-09-11T09:42:27.316246+00:00", "incident_id": "WAF-0ED1A53D21994C0B80698852BEDFD7B7", "source_ip": "127.0.0.1", "method": "GET", "path": "/search", "status": 403, "decision": "BLOCK"}
+{"timestamp": "2026-09-11T14:26:39.530448+00:00", "incident_id": "WAF-224E8BB457804ED4A135E18E640CC4E4", "source_ip": "127.0.0.1", "method": "GET", "path": "/", "status": 200, "decision": "ALLOW"}
+{"timestamp": "2026-09-11T14:26:39.584122+00:00", "incident_id": "WAF-A1FFB20242B84C10BB92823245827DE2", "source_ip": "127.0.0.1", "method": "GET", "path": "/search", "status": 403, "decision": "BLOCK"}
+{"timestamp": "2026-09-11T14:42:15.669211+00:00", "incident_id": "WAF-3E66793B2D2B408FB29E518468BC0637", "source_ip": "127.0.0.1", "method": "GET", "path": "/", "status": 200, "decision": "ALLOW"}
+{"timestamp": "2026-09-11T14:42:15.907520+00:00", "incident_id": "WAF-45B20E873CB2463A81C794C26AC7D0C7", "source_ip": "127.0.0.1", "method": "GET", "path": "/static/css/style.css", "status": 304, "decision": "ALLOW"}
+{"timestamp": "2026-09-11T14:42:15.917233+00:00", "incident_id": "WAF-8BA1996F23BF45649308BA6E49038616", "source_ip": "127.0.0.1", "method": "GET", "path": "/static/js/main.js", "status": 304, "decision": "ALLOW"}
+{"timestamp": "2026-09-11T14:42:16.014507+00:00", "incident_id": "WAF-C03B30D4DD3A487EB25CDACC94B0DF88", "source_ip": "127.0.0.1", "method": "GET", "path": "/favicon.ico", "status": 404, "decision": "ALLOW"}
+{"timestamp": "2026-09-11T14:44:28.316729+00:00", "incident_id": "WAF-B5FB11589EAA437FBE2B32D6123721CB", "source_ip": "127.0.0.1", "method": "GET", "path": "/login", "status": 200, "decision": "ALLOW"}
+{"timestamp": "2026-09-11T14:44:28.358762+00:00", "incident_id": "WAF-3458B6D5129C49869CC88437DBF0DCFA", "source_ip": "127.0.0.1", "method": "GET", "path": "/static/js/main.js", "status": 304, "decision": "ALLOW"}
+{"timestamp": "2026-09-11T14:44:28.359301+00:00", "incident_id": "WAF-C1DFDE4D0BB2471AB30F121400FB1DB6", "source_ip": "127.0.0.1", "method": "GET", "path": "/static/css/style.css", "status": 304, "decision": "ALLOW"}
+{"timestamp": "2026-09-11T14:44:40.097896+00:00", "incident_id": "WAF-E82355D348124D77900A7ADE7F1F8EA3", "source_ip": "127.0.0.1", "method": "GET", "path": "/register", "status": 200, "decision": "ALLOW"}
+{"timestamp": "2026-09-11T14:44:40.124674+00:00", "incident_id": "WAF-A1BFE4C23433428DB8C3E26671F360D3", "source_ip": "127.0.0.1", "method": "GET", "path": "/static/css/style.css", "status": 304, "decision": "ALLOW"}
+{"timestamp": "2026-09-11T14:44:40.134984+00:00", "incident_id": "WAF-95D56C7BB43F404F9D2B213E1A4579FC", "source_ip": "127.0.0.1", "method": "GET", "path": "/static/js/main.js", "status": 304, "decision": "ALLOW"}
+{"timestamp": "2026-09-11T14:44:52.014221+00:00", "incident_id": "WAF-E4D6AEFCD4D54BFC9268BF19104030B9", "source_ip": "127.0.0.1", "method": "POST", "path": "/register", "status": 200, "decision": "ALLOW"}
+{"timestamp": "2026-09-11T14:44:52.056390+00:00", "incident_id": "WAF-D35F0D7EFC924AF7B78FDC55CC238B95", "source_ip": "127.0.0.1", "method": "GET", "path": "/static/js/main.js", "status": 304, "decision": "ALLOW"}
+{"timestamp": "2026-09-11T14:44:52.055605+00:00", "incident_id": "WAF-4022B3566BC44986B7A0F4AAB9336D88", "source_ip": "127.0.0.1", "method": "GET", "path": "/static/css/style.css", "status": 304, "decision": "ALLOW"}
+{"timestamp": "2026-09-11T14:45:14.934012+00:00", "incident_id": "WAF-625FF9E23C9C46D89D08626620A3A819", "source_ip": "127.0.0.1", "method": "POST", "path": "/register", "status": 302, "decision": "ALLOW"}
+{"timestamp": "2026-09-11T14:45:14.969055+00:00", "incident_id": "WAF-1D11226DDB5E41EAABF64C77DE494234", "source_ip": "127.0.0.1", "method": "GET", "path": "/login", "status": 200, "decision": "ALLOW"}
+{"timestamp": "2026-09-11T14:45:15.023697+00:00", "incident_id": "WAF-0958AB19BE87414FBCC9BCBB590C0624", "source_ip": "127.0.0.1", "method": "GET", "path": "/static/css/style.css", "status": 304, "decision": "ALLOW"}
+{"timestamp": "2026-09-11T14:45:15.023309+00:00", "incident_id": "WAF-A2F5AE38C96243CC93ACFB21550AE948", "source_ip": "127.0.0.1", "method": "GET", "path": "/static/js/main.js", "status": 304, "decision": "ALLOW"}
+{"timestamp": "2026-09-11T14:45:29.814984+00:00", "incident_id": "WAF-0A27E2184E644C67AA2DC7F5EAB30B3B", "source_ip": "127.0.0.1", "method": "POST", "path": "/login", "status": 302, "decision": "ALLOW"}
+{"timestamp": "2026-09-11T14:45:29.857185+00:00", "incident_id": "WAF-28511F3CE6EB41D5958EC592ADD14C8F", "source_ip": "127.0.0.1", "method": "GET", "path": "/", "status": 200, "decision": "ALLOW"}
+{"timestamp": "2026-09-11T14:45:29.903054+00:00", "incident_id": "WAF-5F3468B5FA1446319BF38D48805E70A3", "source_ip": "127.0.0.1", "method": "GET", "path": "/static/js/main.js", "status": 304, "decision": "ALLOW"}
+{"timestamp": "2026-09-11T14:45:29.914690+00:00", "incident_id": "WAF-2DCA7E04A29C40D0B10F1C878FC3E8B5", "source_ip": "127.0.0.1", "method": "GET", "path": "/static/css/style.css", "status": 304, "decision": "ALLOW"}
+{"timestamp": "2026-09-11T14:46:06.278975+00:00", "incident_id": "WAF-5D23D1B2E50E4272912A4156DC558329", "source_ip": "127.0.0.1", "method": "GET", "path": "/", "status": 200, "decision": "ALLOW"}
+{"timestamp": "2026-09-11T14:46:06.316959+00:00", "incident_id": "WAF-985FE1A99692404295B235B3DB5E0B58", "source_ip": "127.0.0.1", "method": "GET", "path": "/static/js/main.js", "status": 304, "decision": "ALLOW"}
+{"timestamp": "2026-09-11T14:46:06.338650+00:00", "incident_id": "WAF-932FEAEA18774227801C1346C233A9B0", "source_ip": "127.0.0.1", "method": "GET", "path": "/static/css/style.css", "status": 304, "decision": "ALLOW"}
+{"timestamp": "2026-09-11T14:47:10.285930+00:00", "incident_id": "WAF-8380124AD4B8495F814ECC0DCB165D6D", "source_ip": "127.0.0.1", "method": "GET", "path": "/", "status": 403, "decision": "BLOCK"}
+{"timestamp": "2026-09-11T14:48:46.466107+00:00", "incident_id": "WAF-80349C1BA9674F09B7263AAAE610907C", "source_ip": "127.0.0.1", "method": "GET", "path": "/", "status": 200, "decision": "ALLOW"}
+{"timestamp": "2026-09-11T14:48:46.505244+00:00", "incident_id": "WAF-A7D1D4E647B24DE9ABA875731BE5ACFD", "source_ip": "127.0.0.1", "method": "GET", "path": "/static/css/style.css", "status": 304, "decision": "ALLOW"}
+{"timestamp": "2026-09-11T14:48:46.507161+00:00", "incident_id": "WAF-B3AC5170CFA4414BA1C020EDD4BD6BFE", "source_ip": "127.0.0.1", "method": "GET", "path": "/static/js/main.js", "status": 304, "decision": "ALLOW"}
+{"timestamp": "2026-09-11T14:59:21.356457+00:00", "incident_id": "WAF-1C91EEA14FB540F0A6999C7962EB5639", "source_ip": "127.0.0.1", "method": "GET", "path": "/", "status": 200, "decision": "ALLOW"}
+{"timestamp": "2026-09-11T14:59:21.363827+00:00", "incident_id": "WAF-4AB03F06ABD14C22B424DFA85F0CE148", "source_ip": "127.0.0.1", "method": "GET", "path": "/comment", "status": 200, "decision": "ALLOW"}
+{"timestamp": "2026-09-11T14:59:21.409178+00:00", "incident_id": "WAF-D1AA8D49237741DFBEC61A9A977BA064", "source_ip": "127.0.0.1", "method": "GET", "path": "/static/js/main.js", "status": 304, "decision": "ALLOW"}
+{"timestamp": "2026-09-11T14:59:21.409769+00:00", "incident_id": "WAF-2A456C73AC0845E69B5E81BD1847D0B5", "source_ip": "127.0.0.1", "method": "GET", "path": "/static/css/style.css", "status": 304, "decision": "ALLOW"}
+{"timestamp": "2026-09-11T14:59:26.683641+00:00", "incident_id": "WAF-EBA2688F17804CE69F4A6E58F6D89E21", "source_ip": "127.0.0.1", "method": "GET", "path": "/", "status": 200, "decision": "ALLOW"}
+{"timestamp": "2026-09-11T14:59:26.713363+00:00", "incident_id": "WAF-5C4A2F9D878D48C682778F57E3BF87A7", "source_ip": "127.0.0.1", "method": "GET", "path": "/static/css/style.css", "status": 304, "decision": "ALLOW"}
+{"timestamp": "2026-09-11T14:59:26.729612+00:00", "incident_id": "WAF-75C0E2D5EBEF4E9180528B8395F07A4D", "source_ip": "127.0.0.1", "method": "GET", "path": "/static/js/main.js", "status": 304, "decision": "ALLOW"}

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}{% block subtitle %}Changes are persistent and applied by the WAF on its next request.{% endblock %}
+{% block content %}<section class="detector-grid" id="detectors"></section>
+<section class="panel"><div class="panel-heading"><h2>Configure a rule</h2></div><form id="rule-form" class="filters">
+<label>Rule ID<input id="edit-rule-id" name="id" readonly required placeholder="Select Edit below"></label>
+<label>Score<input id="edit-rule-score" name="score" type="number" min="0" max="100" required></label>
+<label>Action<select id="edit-rule-action" name="action">{% for action in ['BLOCK','LOG','ALERT','TEMPORARY_BLOCK','RATE_LIMIT'] %}<option>{{ action }}</option>{% endfor %}</select></label>
+<label>Severity<select id="edit-rule-severity" name="severity">{% for severity in ['INFO','LOW','MEDIUM','HIGH','CRITICAL'] %}<option>{{ severity }}</option>{% endfor %}</select></label>
+<label>Additional literal signatures (one per line)<textarea id="edit-rule-literals" name="literal_patterns" rows="3" maxlength="605"></textarea></label>
+<button class="primary">Save rule configuration</button></form><p class="footnote">Literal text only, maximum five signatures. Built-in regular expressions are read-only. LOG and ALERT do not block by themselves; other matched rules may still block. Changes are audited.</p></section>
+<section class="panel"><div class="panel-heading"><h2>Detection rules</h2><span class="tag">LIVE CONTROLS</span></div><div id="rules-table" class="table-wrap"></div></section>{% endblock %}

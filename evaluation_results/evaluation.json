@@ -1,0 +1,593 @@
+{
+  "created_at": "2026-09-10T05:16:00.495470+00:00",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "methodology": "Identical synthetic cases in separate fresh temporary labs; backend vulnerable mode enabled. No public targets.",
+  "unit": "One scenario per attack category; brute force is one six-request sequence.",
+  "direct": [
+    {
+      "code": "WAF-001",
+      "category": "SQL_INJECTION",
+      "status": 200,
+      "backend_arrivals": 1,
+      "detected": false,
+      "blocked": false,
+      "vulnerability_demonstrated": true,
+      "observation": "Unmatched baseline returned 0 catalog rows; boolean injection returned 6"
+    },
+    {
+      "code": "WAF-002",
+      "category": "XSS",
+      "status": 302,
+      "backend_arrivals": 1,
+      "detected": false,
+      "blocked": false,
+      "vulnerability_demonstrated": true,
+      "observation": "Stored script markup rendered unescaped; browser execution not tested"
+    },
+    {
+      "code": "WAF-003",
+      "category": "COMMAND_INJECTION",
+      "status": 200,
+      "backend_arrivals": 1,
+      "detected": false,
+      "blocked": false,
+      "vulnerability_demonstrated": null,
+      "observation": "Pattern accepted as search text; backend has no command-execution sink"
+    },
+    {
+      "code": "WAF-004",
+      "category": "DIRECTORY_TRAVERSAL",
+      "status": 200,
+      "backend_arrivals": 1,
+      "detected": false,
+      "blocked": false,
+      "vulnerability_demonstrated": true,
+      "observation": "Synthetic canary outside download directory returned"
+    },
+    {
+      "code": "WAF-005",
+      "category": "BRUTE_FORCE",
+      "status": 200,
+      "statuses": [
+        200,
+        200,
+        200,
+        200,
+        200,
+        200
+      ],
+      "backend_arrivals": 1,
+      "detected": false,
+      "blocked": false,
+      "vulnerability_demonstrated": true,
+      "observation": "Six failed logins accepted without throttling"
+    },
+    {
+      "code": "WAF-006",
+      "category": "MALICIOUS_FILE_UPLOAD",
+      "status": 302,
+      "backend_arrivals": 1,
+      "detected": false,
+      "blocked": false,
+      "vulnerability_demonstrated": true,
+      "observation": "Disallowed extension stored; harmless content, never executed"
+    }
+  ],
+  "protected": [
+    {
+      "code": "WAF-001",
+      "category": "SQL_INJECTION",
+      "status": 403,
+      "backend_arrivals": 0,
+      "detected": true,
+      "blocked": true,
+      "vulnerability_demonstrated": false,
+      "events": [
+        {
+          "id": 3,
+          "incident_id": "WAF-F867FDEAA258413FB14DD0748EBAB89D",
+          "category_code": "WAF-001",
+          "matched_rules": "[\"WAF-001-SQLI-001\", \"WAF-001-SQLI-003\"]",
+          "decision": "BLOCK",
+          "response_status": 403
+        }
+      ],
+      "alerts": 1,
+      "observation": "Prevented before backend"
+    },
+    {
+      "code": "WAF-002",
+      "category": "XSS",
+      "status": 403,
+      "backend_arrivals": 0,
+      "detected": true,
+      "blocked": true,
+      "vulnerability_demonstrated": false,
+      "events": [
+        {
+          "id": 4,
+          "incident_id": "WAF-D071EB2D1ADB4179BF9C4A23F2328559",
+          "category_code": "WAF-002",
+          "matched_rules": "[\"WAF-002-XSS-001\"]",
+          "decision": "BLOCK",
+          "response_status": 403
+        }
+      ],
+      "alerts": 1,
+      "observation": "Prevented before backend"
+    },
+    {
+      "code": "WAF-003",
+      "category": "COMMAND_INJECTION",
+      "status": 403,
+      "backend_arrivals": 0,
+      "detected": true,
+      "blocked": true,
+      "vulnerability_demonstrated": false,
+      "events": [
+        {
+          "id": 5,
+          "incident_id": "WAF-98F45ACE1B0B459BAB289997FA60132F",
+          "category_code": "WAF-003",
+          "matched_rules": "[\"WAF-003-CMD-001\"]",
+          "decision": "BLOCK",
+          "response_status": 403
+        }
+      ],
+      "alerts": 1,
+      "observation": "Prevented before backend"
+    },
+    {
+      "code": "WAF-004",
+      "category": "DIRECTORY_TRAVERSAL",
+      "status": 403,
+      "backend_arrivals": 0,
+      "detected": true,
+      "blocked": true,
+      "vulnerability_demonstrated": false,
+      "events": [
+        {
+          "id": 6,
+          "incident_id": "WAF-567561AAED6540048587B491C57AF88D",
+          "category_code": "WAF-004",
+          "matched_rules": "[\"WAF-004-TRAV-001\", \"WAF-004-TRAV-003\"]",
+          "decision": "BLOCK",
+          "response_status": 403
+        }
+      ],
+      "alerts": 1,
+      "observation": "Prevented before backend"
+    },
+    {
+      "code": "WAF-005",
+      "category": "BRUTE_FORCE",
+      "status": 429,
+      "statuses": [
+        200,
+        200,
+        200,
+        200,
+        200,
+        429
+      ],
+      "backend_arrivals": 0,
+      "detected": true,
+      "blocked": true,
+      "vulnerability_demonstrated": false,
+      "observation": "Failure threshold and sixth login response observed",
+      "events": [
+        {
+          "id": 9,
+          "incident_id": "WAF-77A3D36EF8C548018EDDA95E20745783",
+          "category_code": "",
+          "matched_rules": "[]",
+          "decision": "ALLOW",
+          "response_status": 200
+        },
+        {
+          "id": 10,
+          "incident_id": "WAF-C56C369196BF4537AE2BCA891FE84513",
+          "category_code": "",
+          "matched_rules": "[]",
+          "decision": "ALLOW",
+          "response_status": 200
+        },
+        {
+          "id": 11,
+          "incident_id": "WAF-B19556F940274A15BA767531F5C61B06",
+          "category_code": "",
+          "matched_rules": "[]",
+          "decision": "ALLOW",
+          "response_status": 200
+        },
+        {
+          "id": 12,
+          "incident_id": "WAF-A24FE19E58D14EA69F0E9255BF9A4711",
+          "category_code": "",
+          "matched_rules": "[]",
+          "decision": "ALLOW",
+          "response_status": 200
+        },
+        {
+          "id": 13,
+          "incident_id": "WAF-93B9430E85624F479E7F0ACF5E3B68FF",
+          "category_code": "WAF-005",
+          "matched_rules": "[\"WAF-005-BRUTE-001\"]",
+          "decision": "ALLOW",
+          "response_status": 200
+        },
+        {
+          "id": 14,
+          "incident_id": "WAF-3C36C0457113486D93CFD1FC45AC5CBA",
+          "category_code": "",
+          "matched_rules": "[]",
+          "decision": "RATE_LIMIT",
+          "response_status": 429
+        }
+      ],
+      "alerts": 1
+    },
+    {
+      "code": "WAF-006",
+      "category": "MALICIOUS_FILE_UPLOAD",
+      "status": 403,
+      "backend_arrivals": 0,
+      "detected": true,
+      "blocked": true,
+      "vulnerability_demonstrated": false,
+      "events": [
+        {
+          "id": 7,
+          "incident_id": "WAF-5BE4C3D88A684236A57BD3CE596EF799",
+          "category_code": "WAF-006",
+          "matched_rules": "[\"WAF-006-UPLOAD-001\"]",
+          "decision": "BLOCK",
+          "response_status": 403
+        }
+      ],
+      "alerts": 1,
+      "observation": "Prevented before backend"
+    }
+  ],
+  "comparison": [
+    {
+      "code": "WAF-001",
+      "category": "SQL_INJECTION",
+      "without_waf": "Unmatched baseline returned 0 catalog rows; boolean injection returned 6",
+      "direct_status": 200,
+      "vulnerability_demonstrated": true,
+      "with_waf": "Prevented before backend",
+      "protected_status": 403,
+      "detected": true,
+      "blocked": true,
+      "blocked_backend_arrivals": 0
+    },
+    {
+      "code": "WAF-002",
+      "category": "XSS",
+      "without_waf": "Stored script markup rendered unescaped; browser execution not tested",
+      "direct_status": 302,
+      "vulnerability_demonstrated": true,
+      "with_waf": "Prevented before backend",
+      "protected_status": 403,
+      "detected": true,
+      "blocked": true,
+      "blocked_backend_arrivals": 0
+    },
+    {
+      "code": "WAF-003",
+      "category": "COMMAND_INJECTION",
+      "without_waf": "Pattern accepted as search text; backend has no command-execution sink",
+      "direct_status": 200,
+      "vulnerability_demonstrated": null,
+      "with_waf": "Prevented before backend",
+      "protected_status": 403,
+      "detected": true,
+      "blocked": true,
+      "blocked_backend_arrivals": 0
+    },
+    {
+      "code": "WAF-004",
+      "category": "DIRECTORY_TRAVERSAL",
+      "without_waf": "Synthetic canary outside download directory returned",
+      "direct_status": 200,
+      "vulnerability_demonstrated": true,
+      "with_waf": "Prevented before backend",
+      "protected_status": 403,
+      "detected": true,
+      "blocked": true,
+      "blocked_backend_arrivals": 0
+    },
+    {
+      "code": "WAF-005",
+      "category": "BRUTE_FORCE",
+      "without_waf": "Six failed logins accepted without throttling",
+      "direct_status": 200,
+      "vulnerability_demonstrated": true,
+      "with_waf": "Failure threshold and sixth login response observed",
+      "protected_status": 429,
+      "detected": true,
+      "blocked": true,
+      "blocked_backend_arrivals": 0
+    },
+    {
+      "code": "WAF-006",
+      "category": "MALICIOUS_FILE_UPLOAD",
+      "without_waf": "Disallowed extension stored; harmless content, never executed",
+      "direct_status": 302,
+      "vulnerability_demonstrated": true,
+      "with_waf": "Prevented before backend",
+      "protected_status": 403,
+      "detected": true,
+      "blocked": true,
+      "blocked_backend_arrivals": 0
+    }
+  ],
+  "run_id": "986238d23af34073ac45c7c474279a6b",
+  "dataset": "synthetic-v1",
+  "normal_traffic": [
+    {
+      "name": "registration",
+      "status": 302,
+      "detected": false,
+      "blocked": false,
+      "functional_success": true,
+      "event_ids": [
+        "WAF-43C0887131DD4273B93BD41473913ADE"
+      ]
+    },
+    {
+      "name": "login",
+      "status": 302,
+      "detected": false,
+      "blocked": false,
+      "functional_success": true,
+      "event_ids": [
+        "WAF-AF9F46103C3F43029BEF269F30F238D2"
+      ]
+    },
+    {
+      "name": "search",
+      "status": 200,
+      "detected": false,
+      "blocked": false,
+      "functional_success": true,
+      "event_ids": [
+        "WAF-5F33FC6116E24E30A33564A183A7BEDE"
+      ]
+    },
+    {
+      "name": "profile update",
+      "status": 302,
+      "detected": false,
+      "blocked": false,
+      "functional_success": true,
+      "event_ids": [
+        "WAF-64C2B3409B95473581A3AB33D3087A4C"
+      ]
+    },
+    {
+      "name": "comment",
+      "status": 302,
+      "detected": false,
+      "blocked": false,
+      "functional_success": true,
+      "event_ids": [
+        "WAF-FEA9EEDB24F04B6A8773F24C8ABB210B"
+      ]
+    },
+    {
+      "name": "upload",
+      "status": 302,
+      "detected": false,
+      "blocked": false,
+      "functional_success": true,
+      "event_ids": [
+        "WAF-DC3C07CC0354421194573B412A132E46"
+      ]
+    },
+    {
+      "name": "download",
+      "status": 200,
+      "detected": false,
+      "blocked": false,
+      "functional_success": true,
+      "event_ids": [
+        "WAF-19E2F12E8737410AA9029AAC3B9BF132"
+      ]
+    }
+  ],
+  "effectiveness": {
+    "true_positives": 6,
+    "false_negatives": 0,
+    "false_positives": 0,
+    "true_negatives": 7,
+    "detection_rate": 1.0,
+    "blocking_rate": 1.0,
+    "false_positive_rate": 0.0,
+    "false_block_rate": 0.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "per_attack": [
+      {
+        "code": "WAF-001",
+        "category": "SQL_INJECTION",
+        "tested": 1,
+        "detected": 1,
+        "blocked": 1
+      },
+      {
+        "code": "WAF-002",
+        "category": "XSS",
+        "tested": 1,
+        "detected": 1,
+        "blocked": 1
+      },
+      {
+        "code": "WAF-003",
+        "category": "COMMAND_INJECTION",
+        "tested": 1,
+        "detected": 1,
+        "blocked": 1
+      },
+      {
+        "code": "WAF-004",
+        "category": "DIRECTORY_TRAVERSAL",
+        "tested": 1,
+        "detected": 1,
+        "blocked": 1
+      },
+      {
+        "code": "WAF-005",
+        "category": "BRUTE_FORCE",
+        "tested": 1,
+        "detected": 1,
+        "blocked": 1
+      },
+      {
+        "code": "WAF-006",
+        "category": "MALICIOUS_FILE_UPLOAD",
+        "tested": 1,
+        "detected": 1,
+        "blocked": 1
+      }
+    ]
+  },
+  "performance": {
+    "direct": {
+      "samples": 50,
+      "mean_latency_ms": 11.363459999997758,
+      "median_latency_ms": 14.229399999976522,
+      "p95_latency_ms": 25.07130000003599,
+      "requests_per_second": 87.76757040934089,
+      "cpu_percent_one_core": 24.684629177627123,
+      "peak_sampled_rss_mib": 66.07421875,
+      "successful_responses": 50,
+      "latency_samples_ms": [
+        18.805699999802528,
+        2.6451999999608233,
+        2.581700000064302,
+        20.318300000099043,
+        17.24840000019867,
+        16.910699999925782,
+        15.261799999962022,
+        25.003699999842866,
+        18.400800000108575,
+        2.915000000029977,
+        2.7135999998790794,
+        2.5574999999662396,
+        2.7628000000277098,
+        2.4212999999235763,
+        2.556300000151168,
+        15.919299999950454,
+        2.9027999999016174,
+        14.125400000011723,
+        16.754699999864897,
+        15.08519999993041,
+        2.559000000019296,
+        14.33339999994132,
+        17.07950000013625,
+        25.245400000130758,
+        3.3276999999998225,
+        2.715200000011464,
+        22.398199999997814,
+        13.129899999967165,
+        16.046200000118915,
+        25.07130000003599,
+        16.630300000088027,
+        16.27250000001368,
+        17.765499999995882,
+        24.381599999969694,
+        16.551299999946423,
+        2.6564999998299754,
+        2.593199999864737,
+        28.0859000001783,
+        2.737400000114576,
+        2.3898000001736364,
+        2.9201999998349493,
+        2.5059999998120475,
+        2.604999999903157,
+        11.471600000049875,
+        16.693700000132594,
+        2.5637999999617023,
+        2.7239000000918168,
+        2.964600000041173,
+        16.7653999999402,
+        17.098799999985204
+      ],
+      "elapsed_seconds": 0.5696864999999889
+    },
+    "protected": {
+      "samples": 50,
+      "mean_latency_ms": 37.187643999996,
+      "median_latency_ms": 36.49130000007972,
+      "p95_latency_ms": 65.73299999990923,
+      "requests_per_second": 26.843452634943503,
+      "cpu_percent_one_core": 49.49261579567708,
+      "peak_sampled_rss_mib": 108.37890625,
+      "successful_responses": 50,
+      "latency_samples_ms": [
+        47.196799999937866,
+        16.463100000009945,
+        16.086600000107865,
+        16.403200000013385,
+        45.812500000010914,
+        21.172099999830607,
+        38.02500000006148,
+        35.15460000016901,
+        20.760899999913818,
+        27.48380000002726,
+        34.934000000021115,
+        67.60179999992033,
+        29.885799999874507,
+        37.827999999990425,
+        16.615399999864167,
+        15.670300000010684,
+        29.438400000117326,
+        17.322100000001228,
+        16.64329999994152,
+        32.299100000045655,
+        49.948200000017096,
+        16.802100000177234,
+        33.49439999988135,
+        44.137400000181515,
+        49.53709999995226,
+        59.16009999987182,
+        61.3800999999512,
+        60.05439999989903,
+        51.46199999990131,
+        49.88509999998314,
+        48.828199999888966,
+        33.58679999996639,
+        32.591200000069875,
+        16.405800000029558,
+        16.76220000013018,
+        33.67809999986093,
+        40.812799999912386,
+        26.360699999941062,
+        32.337500000039654,
+        41.944600000078935,
+        41.72289999996792,
+        65.73299999990923,
+        55.0221999999394,
+        48.36030000001301,
+        50.28330000004644,
+        41.84609999992972,
+        38.53350000008504,
+        18.328500000052372,
+        69.77610000012646,
+        47.810700000127326
+      ],
+      "elapsed_seconds": 1.8626515999999356
+    },
+    "overhead_ms": 25.82418399999824,
+    "overhead_percent": 227.25634621852265,
+    "methodology": "Sequential single-client batches; direct then protected after 5 warmups each. CPU is server process-time delta as a percent of one core; protected includes WAF + backend. RSS is sampled, not OS peak. Generic rate limit disabled in disposable test configuration.",
+    "caveat": "Loopback development-server microbenchmark, not capacity/load testing. Client-observed latency difference includes proxy, network and logging costs, not pure detector time. Batch order and host noise can bias results."
+  },
+  "limitations": [
+    "One scenario per attack category and seven legitimate scenarios; not statistically representative.",
+    "XSS confirms unescaped stored markup, not browser execution. Command execution is not implemented in the backend.",
+    "No Kali VM execution or public GeoIP dataset was available."
+  ]
+}

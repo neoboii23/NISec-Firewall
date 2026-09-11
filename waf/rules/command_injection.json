@@ -1,0 +1,86 @@
+{
+  "rules": [
+    {
+      "id": "WAF-003-CMD-001",
+      "name": "Shell separator with command",
+      "category": "COMMAND_INJECTION",
+      "severity": "HIGH",
+      "score": 8,
+      "enabled": true,
+      "action": "BLOCK",
+      "targets": [
+        "query",
+        "form",
+        "body",
+        "path",
+        "cookies",
+        "headers"
+      ],
+      "patterns": [
+        "(?:;|&&|\\|\\||\\|)\\s*(?:whoami|id|cat|ls|dir|echo|ping|curl|wget|nc|bash|sh|cmd(?:\\.exe)?|powershell|python|rm|type|netstat)\\b"
+      ]
+    },
+    {
+      "id": "WAF-003-CMD-002",
+      "name": "Shell substitution",
+      "category": "COMMAND_INJECTION",
+      "severity": "HIGH",
+      "score": 8,
+      "enabled": true,
+      "action": "BLOCK",
+      "targets": [
+        "query",
+        "form",
+        "body",
+        "path",
+        "cookies",
+        "headers"
+      ],
+      "patterns": [
+        "\\$\\([^)]{1,256}\\)",
+        "\\x60[^\\x60]{1,256}\\x60"
+      ]
+    },
+    {
+      "id": "WAF-003-CMD-003",
+      "name": "Shell interpreter options or redirection",
+      "category": "COMMAND_INJECTION",
+      "severity": "HIGH",
+      "score": 8,
+      "enabled": true,
+      "action": "BLOCK",
+      "targets": [
+        "query",
+        "form",
+        "body",
+        "path",
+        "cookies",
+        "headers"
+      ],
+      "patterns": [
+        "(?:/bin/(?:sh|bash)|cmd(?:\\.exe)?\\s+/c|powershell\\s+-(?:enc|command))\\b",
+        "\\b(?:cat|echo|type)\\s+[^;]{0,120}(?:>>?|<)\\s*[/\\w.]"
+      ]
+    },
+    {
+      "id": "WAF-003-CMD-004",
+      "name": "Weak shell chaining indicator",
+      "category": "COMMAND_INJECTION",
+      "severity": "LOW",
+      "score": 2,
+      "enabled": true,
+      "action": "BLOCK",
+      "targets": [
+        "query",
+        "form",
+        "body",
+        "path",
+        "cookies",
+        "headers"
+      ],
+      "patterns": [
+        "&&|\\|\\|"
+      ]
+    }
+  ]
+}

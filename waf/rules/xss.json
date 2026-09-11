@@ -1,0 +1,85 @@
+{
+  "rules": [
+    {
+      "id": "WAF-002-XSS-001",
+      "name": "Script element",
+      "category": "XSS",
+      "severity": "HIGH",
+      "score": 8,
+      "enabled": true,
+      "action": "BLOCK",
+      "targets": [
+        "query",
+        "form",
+        "body",
+        "path",
+        "cookies",
+        "headers"
+      ],
+      "patterns": [
+        "<\\s*/?\\s*script\\b"
+      ]
+    },
+    {
+      "id": "WAF-002-XSS-002",
+      "name": "JavaScript URI",
+      "category": "XSS",
+      "severity": "HIGH",
+      "score": 8,
+      "enabled": true,
+      "action": "BLOCK",
+      "targets": [
+        "query",
+        "form",
+        "body",
+        "path",
+        "cookies",
+        "headers"
+      ],
+      "patterns": [
+        "\\bjavascript\\s*:"
+      ]
+    },
+    {
+      "id": "WAF-002-XSS-003",
+      "name": "HTML event handler",
+      "category": "XSS",
+      "severity": "HIGH",
+      "score": 8,
+      "enabled": true,
+      "action": "BLOCK",
+      "targets": [
+        "query",
+        "form",
+        "body",
+        "path",
+        "cookies",
+        "headers"
+      ],
+      "patterns": [
+        "<[^>]{0,1024}\\bon[a-z]+\\s*="
+      ]
+    },
+    {
+      "id": "WAF-002-XSS-004",
+      "name": "Active embedded HTML",
+      "category": "XSS",
+      "severity": "HIGH",
+      "score": 8,
+      "enabled": true,
+      "action": "BLOCK",
+      "targets": [
+        "query",
+        "form",
+        "body",
+        "path",
+        "cookies",
+        "headers"
+      ],
+      "patterns": [
+        "<\\s*(?:iframe|object|embed)\\b",
+        "<\\s*svg\\b[^>]{0,512}(?:on[a-z]+\\s*=|href\\s*=)"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "rules": [
+    {
+      "id": "WAF-004-TRAV-001",
+      "name": "Parent directory component",
+      "category": "DIRECTORY_TRAVERSAL",
+      "severity": "HIGH",
+      "score": 8,
+      "enabled": true,
+      "action": "BLOCK",
+      "targets": [
+        "path",
+        "query",
+        "form",
+        "body",
+        "files"
+      ],
+      "patterns": [
+        "(?:^|/|[=\\s])\\.\\.(?:/|$)"
+      ]
+    },
+    {
+      "id": "WAF-004-TRAV-002",
+      "name": "Absolute filesystem path",
+      "category": "DIRECTORY_TRAVERSAL",
+      "severity": "HIGH",
+      "score": 8,
+      "enabled": true,
+      "action": "BLOCK",
+      "targets": [
+        "query",
+        "form",
+        "files"
+      ],
+      "patterns": [
+        "^(?:[a-z]:/|//|/(?:etc|proc|windows)/)"
+      ]
+    },
+    {
+      "id": "WAF-004-TRAV-003",
+      "name": "File path escapes configured virtual directory",
+      "category": "DIRECTORY_TRAVERSAL",
+      "severity": "HIGH",
+      "score": 8,
+      "enabled": true,
+      "action": "BLOCK",
+      "targets": [],
+      "patterns": []
+    }
+  ]
+}

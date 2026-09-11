@@ -1,0 +1,126 @@
+{
+  "rules": [
+    {
+      "id": "WAF-001-SQLI-001",
+      "name": "Boolean comparison in SQL context",
+      "category": "SQL_INJECTION",
+      "severity": "HIGH",
+      "score": 8,
+      "enabled": true,
+      "action": "BLOCK",
+      "targets": [
+        "query",
+        "form",
+        "body",
+        "path",
+        "cookies",
+        "headers"
+      ],
+      "patterns": [
+        "(?:['\")]\\s*|\\b\\d+\\s+)(?:or|and)\\s+(?:['\"]?[\\w]+['\"]?\\s*(?:=|<>|!=)\\s*['\"]?[\\w]+|\\d+\\s*(?:--|#))"
+      ]
+    },
+    {
+      "id": "WAF-001-SQLI-002",
+      "name": "UNION SELECT sequence",
+      "category": "SQL_INJECTION",
+      "severity": "HIGH",
+      "score": 8,
+      "enabled": true,
+      "action": "BLOCK",
+      "targets": [
+        "query",
+        "form",
+        "body",
+        "path",
+        "cookies",
+        "headers"
+      ],
+      "patterns": [
+        "\\bunion(?:\\s|/\\*[^*]*\\*/)+(?:all\\s+)?select\\b"
+      ]
+    },
+    {
+      "id": "WAF-001-SQLI-003",
+      "name": "SQL comment after syntax",
+      "category": "SQL_INJECTION",
+      "severity": "HIGH",
+      "score": 8,
+      "enabled": true,
+      "action": "BLOCK",
+      "targets": [
+        "query",
+        "form",
+        "body",
+        "path",
+        "cookies",
+        "headers"
+      ],
+      "patterns": [
+        "['\")]\\s*(?:--|#|/\\*)",
+        "\\b(?:select|union|or|and)\\b.{0,120}(?:--|/\\*)"
+      ]
+    },
+    {
+      "id": "WAF-001-SQLI-004",
+      "name": "Stacked SQL statements",
+      "category": "SQL_INJECTION",
+      "severity": "HIGH",
+      "score": 8,
+      "enabled": true,
+      "action": "BLOCK",
+      "targets": [
+        "query",
+        "form",
+        "body",
+        "path",
+        "cookies",
+        "headers"
+      ],
+      "patterns": [
+        ";\\s*(?:drop|delete|update|insert|alter|select|exec)\\b"
+      ]
+    },
+    {
+      "id": "WAF-001-SQLI-005",
+      "name": "SQL time delay",
+      "category": "SQL_INJECTION",
+      "severity": "HIGH",
+      "score": 8,
+      "enabled": true,
+      "action": "BLOCK",
+      "targets": [
+        "query",
+        "form",
+        "body",
+        "path",
+        "cookies",
+        "headers"
+      ],
+      "patterns": [
+        "\\b(?:sleep|benchmark|pg_sleep)\\s*\\(",
+        "\\bwaitfor\\s+delay\\b"
+      ]
+    },
+    {
+      "id": "WAF-001-SQLI-006",
+      "name": "SQL SELECT FROM expression",
+      "category": "SQL_INJECTION",
+      "severity": "HIGH",
+      "score": 8,
+      "enabled": true,
+      "action": "BLOCK",
+      "targets": [
+        "query",
+        "form",
+        "body",
+        "path",
+        "cookies",
+        "headers"
+      ],
+      "patterns": [
+        "\\bselect\\s+(?:\\*|[\\w(),. ]{1,100})\\s+from\\s+[\\w[]"
+      ]
+    }
+  ]
+}
