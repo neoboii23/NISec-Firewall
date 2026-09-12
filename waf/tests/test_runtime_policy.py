@@ -1,5 +1,5 @@
 from unittest.mock import patch
-from app import create_app
+from waf_app_loader import create_app
 from management.runtime import RuntimePolicy
 
 def test_live_rate_threshold_and_bypass(tmp_path):

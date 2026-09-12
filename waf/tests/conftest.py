@@ -1,11 +1,18 @@
 import json
+import sys
 from pathlib import Path
 import pytest
+
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+cached_app = sys.modules.get("app")
+if cached_app is not None and Path(getattr(cached_app, "__file__", "")).resolve() != (ROOT / "app.py").resolve():
+    del sys.modules["app"]
+
 from engine.inspector import RequestContext
 from engine.normalizer import Normalizer
 from engine.rule_engine import RuleEngine
-
-ROOT = Path(__file__).resolve().parents[1]
 
 @pytest.fixture
 def settings():

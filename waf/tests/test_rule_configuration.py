@@ -1,5 +1,5 @@
 from unittest.mock import patch
-from app import create_app
+from waf_app_loader import create_app
 
 def test_rule_actions_literals_and_audit(tmp_path):
     app=create_app({'DATABASE_PATH':tmp_path/'db','LOG_DIR':tmp_path/'logs','RATE_LIMIT_ENABLED':False})

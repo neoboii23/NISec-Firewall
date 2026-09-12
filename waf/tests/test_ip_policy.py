@@ -1,6 +1,6 @@
 from unittest.mock import patch
 import pytest
-from app import create_app
+from waf_app_loader import create_app
 
 @pytest.fixture
 def policy_app(tmp_path):

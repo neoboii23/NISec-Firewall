@@ -3,7 +3,7 @@ import json
 import sqlite3
 from unittest.mock import Mock
 import pytest
-import app as proxy_app
+from waf_app_loader import waf_app as proxy_app
 from flask import Response
 from conftest import make_context, ROOT
 from engine.decision import decide

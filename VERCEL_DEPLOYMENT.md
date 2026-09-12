@@ -128,6 +128,14 @@ You can verify the cloud schemas later with:
 .\scripts\check_cloud_schema.ps1
 ```
 
+Before deploying to Vercel, run the Vercel-style smoke test. It loads
+`.local\cloud.env`, forces production-safe flags and checks the root shop
+endpoints against the cloud database:
+
+```powershell
+.\.venv\Scripts\python.exe scripts\smoke_vercel_app.py
+```
+
 For Supabase Cloud, prefer the Supavisor pooler PostgreSQL connection string
 from the Dashboard's **Connect** button. The direct host often looks like
 `db.<project-ref>.supabase.co`; if your machine cannot reach that IPv6 endpoint,
