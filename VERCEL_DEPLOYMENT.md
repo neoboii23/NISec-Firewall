@@ -97,6 +97,38 @@ with the normal launcher too:
 The dashboard stays private as long as you only run it on
 `http://127.0.0.1:9000` and do not deploy or tunnel it.
 
+## Monitor the Hosted Vercel Shop Through the Local WAF
+
+Sentinel does not monitor direct browser visits to the Vercel shop. It monitors
+requests that pass through the WAF. To test the hosted shop while recording WAF
+events, start the local WAF with the Vercel deployment as its backend:
+
+```powershell
+cd D:\NISec
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\start_waf_for_vercel.ps1 -BackendUrl "https://your-shop.vercel.app"
+```
+
+Keep the Sentinel dashboard running in another terminal:
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\start_dashboard.ps1
+```
+
+Then browse and test through the WAF URL, not directly through Vercel:
+
+```text
+http://127.0.0.1:8080
+http://127.0.0.1:8080/search?q=tote
+```
+
+The WAF will forward allowed requests to the Vercel shop and store WAF events in
+the shared Supabase Cloud `security` schema. The dashboard should then show WAF
+`online` and Backend `online` on:
+
+```text
+http://127.0.0.1:9000/system
+```
+
 ## Database Setup
 
 Use a cloud PostgreSQL database, such as Supabase Cloud. To copy the current
