@@ -59,7 +59,7 @@ class CloudDatabaseTests(unittest.TestCase):
                 self.assertEqual(conninfo_to_dict(dsn)['password'], '#demo$pass')
                 with patch.object(cloud_database.psycopg, 'connect') as connect:
                     cloud_database.connect()
-                    connect.assert_called_once_with(dsn, connect_timeout=15)
+                    connect.assert_called_once_with(dsn, connect_timeout=15, prepare_threshold=None)
 
     def test_cloud_override_and_local_target_guard(self):
         for host in ('localhost', '127.0.0.1', '[::1]'):

@@ -13,6 +13,7 @@ sys.path.insert(0, str(project if role in ("backend", "dashboard") else project/
 if role == "backend":
     from config import Config
     Config.SQLALCHEMY_DATABASE_URI = "sqlite:///" + str(work/"backend.db")
+    Config.SQLALCHEMY_ENGINE_OPTIONS = {"pool_pre_ping": True, "pool_recycle": 280}
     Config.UPLOAD_FOLDER = work/"uploads"
     Config.LAB_FILES_FOLDER = work/"lab_files"
     Config.LOG_FOLDER = work/"backend_logs"

@@ -65,7 +65,7 @@ def database_url() -> str:
 def connect():
     url = database_url()
     try:
-        return psycopg.connect(url, connect_timeout=15)
+        return psycopg.connect(url, connect_timeout=15, prepare_threshold=None)
     except psycopg.OperationalError as exc:
         host = urlsplit(url).hostname or "unknown"
         raw_message = str(exc).lower()

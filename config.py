@@ -11,12 +11,16 @@ SHOP_DATABASE_URI = database_url('shop')
 if IS_VERCEL and not SHOP_DATABASE_URI:
     raise RuntimeError("SHOP_DATABASE_URL must be set in Vercel project environment variables.")
 
+ENGINE_OPTIONS = {"pool_pre_ping": True, "pool_recycle": 280}
+if SHOP_DATABASE_URI and SHOP_DATABASE_URI.startswith("postgresql+psycopg://"):
+    ENGINE_OPTIONS["connect_args"] = {"prepare_threshold": None}
+
 
 class Config:
     SECRET_KEY = os.environ.get("SECRET_KEY", "change-this-lab-secret")
     SQLALCHEMY_DATABASE_URI = SHOP_DATABASE_URI or f"sqlite:///{BASE_DIR / 'database.db'}"
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    SQLALCHEMY_ENGINE_OPTIONS = {"pool_pre_ping": True, "pool_recycle": 280}
+    SQLALCHEMY_ENGINE_OPTIONS = ENGINE_OPTIONS
     MAX_CONTENT_LENGTH = 2 * 1024 * 1024
     UPLOAD_FOLDER = Path(os.environ.get("UPLOAD_FOLDER", RUNTIME_DIR / "uploads"))
     LAB_FILES_FOLDER = Path(os.environ.get("LAB_FILES_FOLDER", RUNTIME_DIR / "lab_files"))

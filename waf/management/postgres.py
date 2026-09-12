@@ -62,7 +62,7 @@ class Connection:
 @lru_cache(maxsize=8)
 def engine(url):
     return create_engine(url, pool_pre_ping=True, pool_size=5, max_overflow=3,
-                         connect_args={'connect_timeout': 5})
+                         connect_args={'connect_timeout': 5, 'prepare_threshold': None})
 
 
 def search_path_from_url(url):
