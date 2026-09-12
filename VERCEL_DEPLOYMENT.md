@@ -128,9 +128,14 @@ You can verify the cloud schemas later with:
 .\scripts\check_cloud_schema.ps1
 ```
 
-For Supabase Cloud, use the direct or pooler PostgreSQL connection string from
-Project Settings -> Database. Replace `postgres://` or `postgresql://` is okay;
-the app normalizes it to the installed psycopg driver.
+For Supabase Cloud, prefer the Supavisor pooler PostgreSQL connection string
+from the Dashboard's **Connect** button. The direct host often looks like
+`db.<project-ref>.supabase.co`; if your machine cannot reach that IPv6 endpoint,
+use the pooler host instead, usually shaped like
+`aws-0-<region>.pooler.supabase.com`.
+
+Replace `postgres://` or `postgresql://` is okay; the app normalizes it to the
+installed psycopg driver.
 
 ## Deploy
 

@@ -5,6 +5,7 @@ import argparse
 import os
 import sys
 from pathlib import Path
+from urllib.parse import urlsplit
 
 import psycopg
 
@@ -61,7 +62,35 @@ def database_url() -> str:
 
 
 def connect():
-    return psycopg.connect(database_url(), connect_timeout=15)
+    url = database_url()
+    try:
+        return psycopg.connect(url, connect_timeout=15)
+    except psycopg.OperationalError as exc:
+        host = urlsplit(url).hostname or "unknown"
+        raw_message = str(exc).lower()
+        reason = ""
+        if "password authentication failed" in raw_message:
+            reason = (
+                "\nReason: password authentication failed. Recheck the database password "
+                "you inserted into the connection string."
+            )
+        elif "tenant or user not found" in raw_message or "invalid username" in raw_message:
+            reason = (
+                "\nReason: pooler username/project reference was not accepted. For Supabase "
+                "pooler URLs, the user usually looks like postgres.<project-ref>."
+            )
+        elif "timeout" in raw_message or "timed out" in raw_message:
+            reason = "\nReason: the connection timed out before PostgreSQL accepted it."
+        elif "ssl" in raw_message:
+            reason = "\nReason: SSL negotiation failed. Use the full Supabase URI copied from the dashboard."
+        hint = ""
+        if host.startswith("db.") and host.endswith(".supabase.co"):
+            hint = (
+                "\nThis looks like Supabase's direct database host. If it fails on your network, "
+                "copy the Supavisor pooler connection string from Supabase Dashboard -> Connect "
+                "and rerun scripts/configure_cloud_env.ps1."
+            )
+        raise SystemExit(f"Could not connect to cloud database host {host}.{reason}{hint}") from exc
 
 
 def apply_schema() -> None:
