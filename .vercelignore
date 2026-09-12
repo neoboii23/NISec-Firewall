@@ -1,0 +1,16 @@
+.local/
+backups/
+node_modules/
+.venv/
+__pycache__/
+.pytest_cache/
+evaluation_results/
+lab_tests/
+scripts/
+supabase/
+waf/tests/
+waf/logs/
+admin_dashboard/tests/
+*.db
+*.db-wal
+*.db-shm

@@ -31,6 +31,14 @@ Verification after SQLite retirement on 2026-09-11:
 loopback checks confirmed the backend, WAF storefront, Sentinel login page,
 Studio, and a blocked WAF-001 SQL injection event stored in PostgreSQL.
 
+## Vercel hosting status
+
+Vercel support is configured for the public ORIGINE shop only. Use
+[VERCEL_DEPLOYMENT.md](VERCEL_DEPLOYMENT.md) for the required cloud PostgreSQL
+environment variables and deploy commands. The WAF reverse proxy, Sentinel
+dashboard and local Supabase Studio are intentionally not part of the Vercel
+deployment profile.
+
 ## Phases 6-18 implementation record
 
 Work is recorded here because this workspace is not a Git repository. Baseline: 104 passing tests. The three independent services and existing detection pipeline are retained.

@@ -207,3 +207,7 @@ granted to Supabase `anon` or `authenticated` roles.
 
 For detailed controlled attack examples and the implementation record, read
 [PROJECT_README.md](PROJECT_README.md).
+
+For Vercel hosting, read [VERCEL_DEPLOYMENT.md](VERCEL_DEPLOYMENT.md). The
+Vercel profile deploys only the ORIGINE shop `app.py`; the WAF, Sentinel
+dashboard and local Supabase Studio remain local-lab services.
