@@ -1,8 +1,9 @@
 """Persistent local connection settings. No credentials are sent to browsers."""
 import json
 import os
+import re
 from pathlib import Path
-from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
+from urllib.parse import parse_qsl, quote, urlencode, urlsplit, urlunsplit
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -14,12 +15,27 @@ def normalize_database_url(value, schema=None):
         value = 'postgresql+psycopg://' + value[len('postgres://'):]
     elif value.startswith('postgresql://'):
         value = 'postgresql+psycopg://' + value[len('postgresql://'):]
+    # Encode credentials before urlsplit can treat a password's # or ? as
+    # a fragment/query delimiter. Preserve existing percent-encoded bytes.
+    credentials = re.match(r'^(postgresql\+psycopg://)([^/@]*)@', value)
+    if credentials:
+        userinfo = quote(credentials.group(2), safe=':%')
+        userinfo = re.sub(r'%(?![0-9a-fA-F]{2})', '%25', userinfo)
+        value = credentials.group(1) + userinfo + '@' + value[credentials.end():]
     if schema and value.startswith('postgresql+psycopg://'):
         parts = urlsplit(value)
         query = parse_qsl(parts.query, keep_blank_values=True)
         if not any(key == 'options' for key, _value in query):
             query.append(('options', f'-csearch_path={schema},public'))
         value = urlunsplit((parts.scheme, parts.netloc, parts.path, urlencode(query), parts.fragment))
+    return value
+
+
+def normalize_psycopg_url(value):
+    """Return a libpq URL for direct psycopg connections, without an ORM driver."""
+    value = normalize_database_url(value)
+    if value and value.startswith('postgresql+psycopg://'):
+        return 'postgresql://' + value[len('postgresql+psycopg://'):]
     return value
 
 

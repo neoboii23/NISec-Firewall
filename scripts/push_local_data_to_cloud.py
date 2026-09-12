@@ -3,7 +3,6 @@ from __future__ import annotations
 
 import argparse
 import json
-import os
 import sys
 from pathlib import Path
 from urllib.parse import urlsplit
@@ -14,8 +13,8 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from scripts.cloud_database import apply_schema, load_cloud_env
-from waf.management.settings import normalize_database_url
+from scripts.cloud_database import apply_schema, database_url
+from waf.management.settings import normalize_psycopg_url
 
 LOCAL_ADMIN_CONFIG = ROOT / ".local" / "migration-database.json"
 
@@ -69,7 +68,7 @@ def table_literal(schema: str, table: str) -> str:
 def source_url() -> str:
     if not LOCAL_ADMIN_CONFIG.exists():
         raise SystemExit("Local source database config is missing: .local/migration-database.json")
-    value = json.loads(LOCAL_ADMIN_CONFIG.read_text(encoding="utf-8"))["url"]
+    value = normalize_psycopg_url(json.loads(LOCAL_ADMIN_CONFIG.read_text(encoding="utf-8"))["url"])
     parsed = urlsplit(value)
     if parsed.hostname not in {"127.0.0.1", "localhost", "::1"}:
         raise SystemExit("Source database must be the local Supabase database.")
@@ -77,11 +76,7 @@ def source_url() -> str:
 
 
 def target_url() -> str:
-    load_cloud_env()
-    value = os.environ.get("CLOUD_DATABASE_URL") or os.environ.get("SHOP_DATABASE_URL")
-    if not value:
-        raise SystemExit("Set SHOP_DATABASE_URL or run scripts/configure_cloud_env.ps1 first.")
-    value = normalize_database_url(value)
+    value = database_url()
     parsed = urlsplit(value)
     if parsed.hostname in {"127.0.0.1", "localhost", "::1"}:
         raise SystemExit("Target database must be Supabase Cloud, not the local database.")
@@ -157,10 +152,13 @@ def copy_table(source, target, schema: str, table: str) -> int:
 
 
 def push_data() -> None:
+    # Validate both destinations before making any schema changes.
+    source_dsn = source_url()
+    target_dsn = target_url()
     apply_schema()
     copied = {}
-    with psycopg.connect(source_url(), connect_timeout=15) as source:
-        with psycopg.connect(target_url(), connect_timeout=15) as target:
+    with psycopg.connect(source_dsn, connect_timeout=15) as source:
+        with psycopg.connect(target_dsn, connect_timeout=15) as target:
             ensure_empty_target(target)
             for schema, table in TABLES:
                 copied[f"{schema}.{table}"] = copy_table(source, target, schema, table)

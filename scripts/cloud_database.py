@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from waf.management.settings import normalize_database_url
+from waf.management.settings import normalize_psycopg_url
 
 CLOUD_ENV = ROOT / ".local" / "cloud.env"
 MIGRATION = ROOT / "supabase" / "migrations" / "20260911000100_nisec.sql"
@@ -48,7 +48,16 @@ def database_url() -> str:
     value = os.environ.get("CLOUD_DATABASE_URL") or os.environ.get("SHOP_DATABASE_URL")
     if not value:
         raise SystemExit("Set SHOP_DATABASE_URL or run scripts/configure_cloud_env.ps1 first.")
-    return normalize_database_url(value)
+    value = normalize_psycopg_url(value)
+    try:
+        psycopg.conninfo.conninfo_to_dict(value)
+    except psycopg.ProgrammingError:
+        # libpq parse errors can include the complete URL and its password.
+        raise SystemExit(
+            'Invalid cloud database URL. Check the URL format and '
+            'percent-encode reserved password characters.'
+        ) from None
+    return value
 
 
 def connect():
