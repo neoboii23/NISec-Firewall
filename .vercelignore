@@ -1,4 +1,5 @@
 .local/
+cloud.env
 backups/
 node_modules/
 .venv/

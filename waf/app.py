@@ -3,6 +3,7 @@ import json
 import logging
 import hmac
 import time
+from collections.abc import Mapping
 from pathlib import Path
 from urllib.parse import urlsplit
 from datetime import datetime, timezone, timedelta
@@ -62,6 +63,24 @@ def create_app(overrides=None):
             engine.pipeline.brute_force.unblock_ip(command["ip"])
             command_cursor = command["id"]
 
+    def policy_int(policy: Mapping[str, object], key: str) -> int:
+        value = policy[key]
+        if not isinstance(value, int) or isinstance(value, bool):
+            raise ValueError(f"Runtime policy value {key} must be an integer")
+        return value
+
+    def policy_bool(policy: Mapping[str, object], key: str) -> bool:
+        value = policy[key]
+        if not isinstance(value, bool):
+            raise ValueError(f"Runtime policy value {key} must be a boolean")
+        return value
+
+    def policy_categories(policy: Mapping[str, object]) -> set[str]:
+        value = policy["auto_categories"]
+        if not isinstance(value, list) or not all(isinstance(category, str) for category in value):
+            raise ValueError("Runtime policy value auto_categories must be a string list")
+        return set(value)
+
     @app.before_request
     def protect_management():
         if request.path.startswith("/internal/"):
@@ -85,19 +104,21 @@ def create_app(overrides=None):
         events.record(context, result, status)
         if result.decision=='BLOCK' and any(m.action=='TEMPORARY_BLOCK' for m in result.matches):
             management.set_ip(context.client_ip,'temporary','Rule temporary-block action','WAF',
-                duration=runtime.read()['auto_block'],source='automatic',incident_id=result.incident_id,attack_category=result.category)
+                duration=policy_int(runtime.read(),'auto_block'),source='automatic',incident_id=result.incident_id,attack_category=result.category)
         policy=runtime.read()
-        if policy['auto_enabled'] and result.decision=='BLOCK' and result.score>=policy['auto_min_score']:
-            since=(datetime.now(timezone.utc)-timedelta(seconds=policy['auto_window'])).isoformat()
-            for category in set(m.category for m in result.matches) & set(policy['auto_categories']):
+        auto_min_score = policy_int(policy, 'auto_min_score')
+        if policy_bool(policy, 'auto_enabled') and result.decision=='BLOCK' and result.score>=auto_min_score:
+            since=(datetime.now(timezone.utc)-timedelta(seconds=policy_int(policy, 'auto_window'))).isoformat()
+            for category in set(m.category for m in result.matches) & policy_categories(policy):
                 if category=='BRUTE_FORCE':continue  # Already response-confirmed below.
                 with management.connect() as db:
-                    count=db.execute('''SELECT COUNT(*) FROM security_events e JOIN event_categories c ON c.event_id=e.id
+                    row=db.execute('''SELECT COUNT(*) FROM security_events e JOIN event_categories c ON c.event_id=e.id
                         WHERE e.source_ip=? AND e.timestamp>=? AND c.category=? AND e.decision='BLOCK' AND e.threat_score>=?''',
-                        (context.client_ip,since,category,policy['auto_min_score'])).fetchone()[0]
-                if count>=policy['auto_threshold']:
+                        (context.client_ip,since,category,auto_min_score)).fetchone()
+                    count = row[0] if row else 0
+                if count>=policy_int(policy, 'auto_threshold'):
                     management.set_ip(context.client_ip,'temporary','Repeated '+category,'WAF',
-                        duration=policy['auto_block'],incident_id=result.incident_id,source='automatic',attack_category=category)
+                        duration=policy_int(policy, 'auto_block'),incident_id=result.incident_id,source='automatic',attack_category=category)
                     break
         if result.metadata.get("authentication_outcome") == "failure":
             for match in result.matches:

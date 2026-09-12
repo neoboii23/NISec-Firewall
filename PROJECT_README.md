@@ -39,6 +39,14 @@ environment variables and deploy commands. The WAF reverse proxy, Sentinel
 dashboard and local Supabase Studio are intentionally not part of the Vercel
 deployment profile.
 
+For a shared Supabase Cloud database, use schema `shop` for Vercel shop data and
+schema `security` for the private local WAF/Sentinel data. The helper
+`scripts\configure_cloud_env.ps1` writes the private local
+`D:\NISec\.local\cloud.env` file, and the three local launchers load it
+automatically. Use `scripts\push_local_data_to_cloud.ps1` to apply the schema
+and copy existing local `shop` and `security` records into an empty Supabase
+Cloud database.
+
 ## Phases 6-18 implementation record
 
 Work is recorded here because this workspace is not a Git repository. Baseline: 104 passing tests. The three independent services and existing detection pipeline are retained.

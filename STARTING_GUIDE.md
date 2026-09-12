@@ -211,3 +211,16 @@ For detailed controlled attack examples and the implementation record, read
 For Vercel hosting, read [VERCEL_DEPLOYMENT.md](VERCEL_DEPLOYMENT.md). The
 Vercel profile deploys only the ORIGINE shop `app.py`; the WAF, Sentinel
 dashboard and local Supabase Studio remain local-lab services.
+
+To make all shop and WAF/Sentinel data use Supabase Cloud, save the cloud
+PostgreSQL URL once:
+
+```powershell
+cd D:\NISec
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts\configure_cloud_env.ps1
+.\scripts\push_local_data_to_cloud.ps1
+```
+
+The private file is `D:\NISec\.local\cloud.env`. The local launchers load it
+automatically. Vercel still needs its own environment variables in the Vercel
+dashboard.

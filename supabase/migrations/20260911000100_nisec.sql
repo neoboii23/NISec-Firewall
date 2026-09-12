@@ -72,8 +72,8 @@ CREATE INDEX IF NOT EXISTS ix_event_categories ON security.event_categories(cate
 CREATE INDEX IF NOT EXISTS ix_alert_active ON security.security_alerts(acknowledged,id);
 CREATE INDEX IF NOT EXISTS ix_ip_expiry ON security.ip_policies(expires_at);
 CREATE INDEX IF NOT EXISTS ix_rate_time ON security.rate_limit_records(source_ip,timestamp);
-CREATE VIEW security.blocked_ips WITH (security_invoker=true) AS SELECT * FROM security.ip_policies WHERE kind IN ('blacklist','temporary');
-CREATE VIEW security.trusted_ips WITH (security_invoker=true) AS SELECT * FROM security.ip_policies WHERE kind='whitelist';
-CREATE VIEW security.request_logs WITH (security_invoker=true) AS SELECT id,incident_id,timestamp,source_ip,method,path,decision,response_status FROM security.security_events;
+CREATE OR REPLACE VIEW security.blocked_ips WITH (security_invoker=true) AS SELECT * FROM security.ip_policies WHERE kind IN ('blacklist','temporary');
+CREATE OR REPLACE VIEW security.trusted_ips WITH (security_invoker=true) AS SELECT * FROM security.ip_policies WHERE kind='whitelist';
+CREATE OR REPLACE VIEW security.request_logs WITH (security_invoker=true) AS SELECT id,incident_id,timestamp,source_ip,method,path,decision,response_status FROM security.security_events;
 REVOKE ALL ON ALL TABLES IN SCHEMA shop,security FROM PUBLIC,anon,authenticated;
 REVOKE ALL ON ALL SEQUENCES IN SCHEMA shop,security FROM PUBLIC,anon,authenticated;
