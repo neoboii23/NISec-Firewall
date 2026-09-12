@@ -5,6 +5,7 @@ Only placeholder syntax is adapted; SQL dialect differences live at call sites.
 """
 from contextlib import contextmanager
 from functools import lru_cache
+from urllib.parse import parse_qsl, unquote, urlsplit
 from sqlalchemy import create_engine, text
 
 
@@ -64,7 +65,31 @@ def engine(url):
                          connect_args={'connect_timeout': 5})
 
 
+def search_path_from_url(url):
+    query = dict(parse_qsl(urlsplit(url).query, keep_blank_values=True))
+    options = unquote(query.get("options", ""))
+    marker = "-csearch_path="
+    if marker not in options:
+        return None
+    value = options.split(marker, 1)[1].split()[0]
+    schemas = [schema.strip() for schema in value.split(",") if schema.strip()]
+    if not schemas:
+        return None
+    for schema in schemas:
+        if not schema.replace("_", "").isalnum() or schema[0].isdigit():
+            raise ValueError("Unsafe PostgreSQL schema name")
+    return schemas
+
+
+def quote_identifier(identifier):
+    return '"' + identifier.replace('"', '""') + '"'
+
+
 @contextmanager
 def connect(url):
     with engine(url).begin() as connection:
+        schemas = search_path_from_url(url)
+        if schemas:
+            quoted = ", ".join(quote_identifier(schema) for schema in schemas)
+            connection.execute(text(f"SET LOCAL search_path TO {quoted}"))
         yield Connection(connection)

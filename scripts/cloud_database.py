@@ -21,6 +21,7 @@ MIGRATION = ROOT / "supabase" / "migrations" / "20260911000100_nisec.sql"
 REQUIRED_TABLES = {
     "shop": {"user", "item", "comment", "upload"},
     "security": {
+        "schema_version",
         "security_events",
         "management_settings",
         "ip_policies",
